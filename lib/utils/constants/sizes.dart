@@ -34,27 +34,35 @@ class Sizes{
     static const double spaceBtwSections = 32;
 
     //Border Radius
-
+    static const double borderRadiusSm = 4;
+    static const double borderRadiusMd = 8;
+    static const double borderRadiusLG = 12;
 
    // Divider height
-
-
+    static const double dividerHeight = 1;
 
   //Product item Dimensions
-
+    static const double productImageSize = 120;
+    static const double productImageRadius = 16;
+    static const double productImageHeight = 160;
 
    // Input Field
-
+    static const double inputFieldRadius= 12;
+    static const double spaceBtwInputFields= 16;
 
    // Card Sizes
-
+    static const double cardRadiusLg = 16;
+    static const double cardRadiusMd = 12;
+    static const double cardRadiusSm = 10 ;
+    static const double cardRadiusXs = 6 ;
+    static const double cardElevation = 2 ;
 
    //Image Carousel height
-
+    static const double imageCarouselHeight = 200 ;
 
   // loading Indicator Size
-
+    static const double loadingIndicatorSize = 36 ;
 
   //Grid View spacing
-
+    static const double gridViewSpacing = 16 ;
 }

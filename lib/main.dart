@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme:TAppTheme.lightTheme ,
       darkTheme: TAppTheme.dartTheme,
-    )
+    );
   }
 }
 
