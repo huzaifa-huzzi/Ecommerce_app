@@ -45,4 +45,11 @@ class HelperFunction {
    static List<T> removeDuplicates<T>(List<T> list){
     return list.toSet().toList();
    }
+
+  static focusftn(BuildContext context ,FocusNode current,FocusNode next){
+
+    current.unfocus();
+    FocusScope.of(context).requestFocus(next);
+
+  }
 }
