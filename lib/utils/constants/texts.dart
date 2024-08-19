@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class Text {
+class TextSelector {
 
   // OnBoardingScreen
    static const String onBoardingTitle1 ='Choose Your Product';

@@ -2,6 +2,7 @@
 
 
 import 'package:ecommerece_app/Resources/Routes/RoutesName.dart';
+import 'package:ecommerece_app/view/onBoarding/onBoardingScreenOne.dart';
 import 'package:ecommerece_app/view/splash/SplashScreen.dart';
 import 'package:get/get.dart';
 
@@ -9,7 +10,8 @@ class AppRoutes{
 
   static appRoutes() => [
     GetPage(name:RouteName.splashScreen , page: () =>  SplashScreen()),
-    // login Screen
+    // onBoardingScreens
+    GetPage(name:RouteName.onBoardingOne , page: () =>const   OnBoardingScreenOne()),
 
   ];
 

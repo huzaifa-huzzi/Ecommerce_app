@@ -3,6 +3,7 @@
 class RouteName{
 
   static const String splashScreen = '/';
-// login Screens
+ // onBoarding Screens
+  static const String onBoardingOne = '/OnBoardingScreenOne';
 
 }
