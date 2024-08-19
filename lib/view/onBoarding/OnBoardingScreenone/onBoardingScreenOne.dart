@@ -1,14 +1,10 @@
 import 'package:ecommerece_app/utils/Devics/DeviceUtils.dart';
-import 'package:ecommerece_app/utils/HelperFunction/HelperFunction.dart';
-import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
+import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/FloatingActionButtonWidget.dart';
 import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/OnBoardingScreenOneWidget.dart';
 import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/smoothPageIndicatorWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
 class OnBoardingScreenOne extends StatefulWidget {
@@ -42,9 +38,9 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
               }, child:const  Text('skip',))
           ),
           // Dot NAvigtion
-        const  SmoothPageIndicatorWidget()
+        const  SmoothPageIndicatorWidget(),
            // CircularButton
-
+        const  FloatingActionButtonWidget()
         ],
       ),
     );

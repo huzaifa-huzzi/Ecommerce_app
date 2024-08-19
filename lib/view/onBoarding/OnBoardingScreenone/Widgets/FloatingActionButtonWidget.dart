@@ -1,5 +1,6 @@
 
 
+import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -20,7 +21,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
           final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
           // Set the button background color based on the current theme
-          final Color buttonColor = isDarkMode ? Colors.white : Colors.black;
+          final Color buttonColor = isDarkMode ? AppColor.primary: Colors.black;
 
           return ElevatedButton(
             onPressed: () {},
