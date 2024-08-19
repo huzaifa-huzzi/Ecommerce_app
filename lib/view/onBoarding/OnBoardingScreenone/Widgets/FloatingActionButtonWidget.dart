@@ -12,8 +12,27 @@ class FloatingActionButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-        right:  Sizes.defaultSpace,
-        bottom: DeviceUtils.getBottomNavigationHeight(),
-        child:ElevatedButton(onPressed: (){},style:ElevatedButton.styleFrom(shape:const  CircleBorder(),backgroundColor:Colors.black) , child:const  Icon(Iconsax.arrow_right_3)) );
+      right: Sizes.defaultSpace,
+      bottom: DeviceUtils.getBottomNavigationHeight(),
+      child: Builder(
+        builder: (context) {
+          // Determine the current theme brightness
+          final bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
+          // Set the button background color based on the current theme
+          final Color buttonColor = isDarkMode ? Colors.white : Colors.black;
+
+          return ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              shape: const CircleBorder(),
+              backgroundColor: buttonColor,
+            ),
+            child: const Icon(Iconsax.arrow_right_3),
+          );
+        },
+      ),
+    );
+
   }
 }
