@@ -33,6 +33,9 @@ class DeviceUtils {
   static double getAppBarHeight(){
     return kToolbarHeight;
   }
+  static double getBottomNavigationHeight(){
+    return kToolbarHeight;
+  }
 
   static void setFullScreen(bool enable){
     SystemChrome.setEnabledSystemUIMode(enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
