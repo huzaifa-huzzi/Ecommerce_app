@@ -4,7 +4,9 @@ import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/FloatingActionButtonWidget.dart';
 import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/OnBoardingScreenOneWidget.dart';
 import 'package:ecommerece_app/view/onBoarding/OnBoardingScreenone/Widgets/smoothPageIndicatorWidget.dart';
+import 'package:ecommerece_app/view_model/Controller/onBoardingController/OnBoardingController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class OnBoardingScreenOne extends StatefulWidget {
@@ -15,6 +17,9 @@ class OnBoardingScreenOne extends StatefulWidget {
 }
 
 class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
+
+  final controller = Get.put(OnBoardingController());
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -22,8 +27,10 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
         children: [
            // Horizontal Scrollable Pages
          PageView(
+           controller:  controller.pageController,
+           onPageChanged: controller.updatePageIndicator,
            children:
-                [
+               const  [
                   OnBoardingScreenOneWidget(title: TextSelector.onBoardingTitle1, image: 'assets/images/delivery.gif.gif', subTitle: TextSelector.onBoardingSubTitle1),
                   OnBoardingScreenOneWidget(title: TextSelector.onBoardingTitle3, image: 'assets/images/scene.gif', subTitle: TextSelector.onBoardingSubTitle3),
                   OnBoardingScreenOneWidget(title: TextSelector.onBoardingTitle2, image: 'assets/images/payment.gif', subTitle: TextSelector.onBoardingSubTitle2)
@@ -34,10 +41,10 @@ class _OnBoardingScreenOneState extends State<OnBoardingScreenOne> {
             top: DeviceUtils.getAppBarHeight(),
               right:  Sizes.defaultSpace,
               child: TextButton(onPressed: (){
-
+                  controller.skipPage();
               }, child:const  Text('skip',))
           ),
-          // Dot NAvigtion
+          // Dot Navigation
         const  SmoothPageIndicatorWidget(),
            // CircularButton
         const  FloatingActionButtonWidget()

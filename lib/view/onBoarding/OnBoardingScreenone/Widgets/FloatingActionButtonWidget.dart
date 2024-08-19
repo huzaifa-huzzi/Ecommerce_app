@@ -2,7 +2,9 @@
 
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
+import 'package:ecommerece_app/view_model/Controller/onBoardingController/OnBoardingController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../../utils/Devics/DeviceUtils.dart';
@@ -12,6 +14,7 @@ class FloatingActionButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     final controller = Get.put(OnBoardingController());
     return Positioned(
       right: Sizes.defaultSpace,
       bottom: DeviceUtils.getBottomNavigationHeight(),
@@ -24,7 +27,9 @@ class FloatingActionButtonWidget extends StatelessWidget {
           final Color buttonColor = isDarkMode ? AppColor.primary: Colors.black;
 
           return ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              controller.nextPage();
+            },
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
               backgroundColor: buttonColor,
