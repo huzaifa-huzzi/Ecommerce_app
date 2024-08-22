@@ -6,9 +6,11 @@ import 'package:get/get.dart';
 class AppRoutes{
 
   static appRoutes() => [
+     //splashScreen
     GetPage(name:RouteName.splashScreen , page: () =>  SplashScreen()),
-    // onBoardingScreens
+    // Views
     GetPage(name:RouteName.onBoardingOne , page: () =>const   OnBoardingScreenOne()),
+    //Authentication
 
   ];
 
