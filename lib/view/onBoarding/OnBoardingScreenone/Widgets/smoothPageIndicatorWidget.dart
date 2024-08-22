@@ -2,7 +2,6 @@ import 'package:ecommerece_app/view_model/Controller/onBoardingController/OnBoar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../../../utils/Devics/DeviceUtils.dart';
 import '../../../../utils/constants/sizes.dart';
 

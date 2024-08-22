@@ -6,8 +6,9 @@ import 'package:ecommerece_app/view_model/Controller/onBoardingController/OnBoar
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../utils/Devics/DeviceUtils.dart';
+
+
 
 class FloatingActionButtonWidget extends StatelessWidget {
   const FloatingActionButtonWidget({super.key});
