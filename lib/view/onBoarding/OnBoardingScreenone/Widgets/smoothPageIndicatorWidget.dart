@@ -6,6 +6,8 @@ import '../../../../utils/Devics/DeviceUtils.dart';
 import '../../../../utils/constants/sizes.dart';
 
 
+
+
 class SmoothPageIndicatorWidget extends StatelessWidget {
   const SmoothPageIndicatorWidget({super.key});
 
