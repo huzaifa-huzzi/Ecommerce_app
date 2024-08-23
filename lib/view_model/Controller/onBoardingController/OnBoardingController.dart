@@ -1,5 +1,6 @@
 
 
+import 'package:ecommerece_app/Resources/Routes/RoutesName.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +22,7 @@ class OnBoardingController extends GetxController {
       }
       void nextPage(){
           if(currentIndex.value == 2){
-           // Get.toNamed(RoutesName.loginscreen);
+           Get.toNamed(RouteName.loginScreen);
           }else{
             int page = currentIndex.value + 1 ;
             pageController.jumpToPage(page);

@@ -1,4 +1,5 @@
 import 'package:ecommerece_app/Resources/SpacingStyles/SpcingStyle.dart';
+import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
@@ -26,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
              padding: SpacingStyles.paddingWithAppBarHeight,
              child: Column(
                children: [
-                  // logo and Subtitle
+                  /// logo and Subtitle
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -45,36 +46,60 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     ],
                   ),
-                   // Forms
+                   /// Forms
                   Form(
-                      child: Column(
-                        children: [
-                           //Email
-                          TextFormField(
-                            decoration:const  InputDecoration(
-                              prefixIcon:Icon(Iconsax.direct_right),labelText: 'Email'),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: Sizes.spaceBtwSections),
+                        child: Column(
+                          children: [
+                             //Email
+                            TextFormField(
+                              decoration:const  InputDecoration(
+                                prefixIcon:Icon(Iconsax.direct_right),labelText: 'Email'),
+                              ),
+                             // Password
+                            TextFormField(
+                              decoration:const  InputDecoration(
+                                  prefixIcon:Icon(Iconsax.password_check),labelText: 'Password',suffixIcon: Icon(Iconsax.eye_slash)),
                             ),
-                           // Password
-                          TextFormField(
-                            decoration:const  InputDecoration(
-                                prefixIcon:Icon(Iconsax.password_check),labelText: 'Password',suffixIcon: Icon(Iconsax.eye_slash)),
-                          ),
-                         const  SizedBox(height:  Sizes.spaceBtwInputFields / 2,),
+                           const  SizedBox(height:  Sizes.spaceBtwInputFields / 2,),
+                            // Remember me Button
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Checkbox(value: true, onChanged: (value){}),
+                                    const Text('Remember me'),
+                                  ],
+                                ),
+                                //Forgot Button
+                                TextButton(onPressed: (){}, child: const Text('Forgot Password'))
+                              ],
+                            ),
+                            const  SizedBox(height:  Sizes.spaceBtwSections,),
+                            // SignIn Button
+                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text('Sign in')),),
+                            // create Account
+                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text('Create Account')),),
 
-                        ],
+
+
+                          ],
+                        ),
                       )
                   ),
-                   // Remember me Button
-                  Row(
-                    children: [
-                      Row(
-                        children: [
-                          Checkbox(value: true, onChanged: (value){}),
-                          const Text('Remember me'),
-                        ],
-                      ),
-                    ],
-                  )
+                  /// Divider
+                 Row(
+                   children: [
+                     Divider(color: themeController.isDarkTheme.value ? AppColor.darkGrey: AppColor.grey,thickness: 0.5,indent:60 ,endIndent: 5,)
+                   ],
+                 )
+
+
+
+
+
                ],
              ),
          ),
