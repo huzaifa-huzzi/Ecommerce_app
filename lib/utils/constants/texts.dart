@@ -14,8 +14,9 @@ class TextSelector {
 
 
    // Home
-
  static const String homeAppbarTitle = 'Good Day For Shopping ' ;
-
+ // Authentication
+   static const String loginTitle = 'Login' ;
+   static const String loginSubTitle = 'Login Complete' ;
 
 }

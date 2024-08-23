@@ -1,7 +1,10 @@
 import 'package:ecommerece_app/Resources/SpacingStyles/SpcingStyle.dart';
+import 'package:ecommerece_app/utils/constants/sizes.dart';
+import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 
 
 class LoginScreen extends StatefulWidget {
@@ -35,6 +38,41 @@ class _LoginScreenState extends State<LoginScreen> {
                               : 'assets/logos/light mode.png', // Light theme logo
                         );
                       }),
+                      Text(TextSelector.loginTitle,style: Theme.of(context).textTheme.headlineMedium,),
+                     const  SizedBox(height:  Sizes.sm,),
+                      Text(TextSelector.loginSubTitle,style: Theme.of(context).textTheme.bodyMedium,),
+
+
+                    ],
+                  ),
+                   // Forms
+                  Form(
+                      child: Column(
+                        children: [
+                           //Email
+                          TextFormField(
+                            decoration:const  InputDecoration(
+                              prefixIcon:Icon(Iconsax.direct_right),labelText: 'Email'),
+                            ),
+                           // Password
+                          TextFormField(
+                            decoration:const  InputDecoration(
+                                prefixIcon:Icon(Iconsax.password_check),labelText: 'Password',suffixIcon: Icon(Iconsax.eye_slash)),
+                          ),
+                         const  SizedBox(height:  Sizes.spaceBtwInputFields / 2,),
+
+                        ],
+                      )
+                  ),
+                   // Remember me Button
+                  Row(
+                    children: [
+                      Row(
+                        children: [
+                          Checkbox(value: true, onChanged: (value){}),
+                          const Text('Remember me'),
+                        ],
+                      ),
                     ],
                   )
                ],
