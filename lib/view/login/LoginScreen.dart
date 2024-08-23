@@ -58,14 +58,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           children: [
                              //Email
                             TextFormField(
-                              decoration:const  InputDecoration(
-                                prefixIcon:Icon(Iconsax.direct_right),labelText: 'Email'),
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Iconsax.direct_right),
+                                labelText: TextSelector.email,
+                                labelStyle: TextStyle(
+                                  color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
+                                ),
                               ),
-                            const  SizedBox(height:  Sizes.spaceBtwInputFields / 2),
+                            ),
+                            const SizedBox(height: Sizes.spaceBtwInputFields / 2),
                              // Password
                             TextFormField(
-                              decoration:const  InputDecoration(
-                                  prefixIcon:Icon(Iconsax.password_check),labelText: 'Password',suffixIcon: Icon(Iconsax.eye_slash)),
+                              decoration: InputDecoration(
+                                prefixIcon: const Icon(Iconsax.password_check),
+                                labelText: TextSelector.password,
+                                suffixIcon: const Icon(Iconsax.eye_slash),
+                                labelStyle: TextStyle(
+                                  color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
+                                ),
+                              ),
                             ),
 
                             // Remember me Button
@@ -79,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                                 //Forgot Button
-                                TextButton(onPressed: (){}, child: const Text('Forgot Password ?'))
+                                TextButton(onPressed: (){}, child: const Text(TextSelector.forgotPassword))
                               ],
                             ),
                             const  SizedBox(height: Sizes.spaceBtwItems,),

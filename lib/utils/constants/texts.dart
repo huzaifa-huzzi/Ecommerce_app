@@ -9,7 +9,7 @@ class TextSelector {
    static const String onBoardingTitle3 ='Deliver at your door step';
 
    static const String onBoardingSubTitle1 ='Welcome to a world of Limitless Choices - Your Perfect Products Awaits!';
-   static const String onBoardingSubTitle2 ='For Seamless Transcations,Choose Your Payment Path - Your Conveinence,Our Priority !';
+   static const String onBoardingSubTitle2 ='For Seamless Transactions,Choose Your Payment Path - Your Conveinence,Our Priority !';
    static const String onBoardingSubTitle3 ='From Our Doorstep to Yours - Swift,Secure,and Contactless Delivery! ';
 
 
@@ -18,5 +18,7 @@ class TextSelector {
  // Authentication
    static const String loginTitle = 'Welcome back,' ;
    static const String loginSubTitle = 'Discover Limitless choices and unMatched Convenience' ;
-
+   static const String email = 'Email' ;
+   static const String password = 'Password';
+   static const String forgotPassword = 'Forgot Password?';
 }
