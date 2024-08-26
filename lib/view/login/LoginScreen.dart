@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/Resources/Routes/RoutesName.dart';
 import 'package:ecommerece_app/Resources/SpacingStyles/SpcingStyle.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
@@ -95,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const  SizedBox(height: Sizes.spaceBtwItems,),
                             // SignIn Button
-                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text('Sign in')),),
+                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () =>Get.toNamed(RouteName.signupScreen) , child: const Text('Sign in')),),
                            const  SizedBox(height: Sizes.spaceBtwItems,),
                             // create Account
                             SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text('Create Account')),),

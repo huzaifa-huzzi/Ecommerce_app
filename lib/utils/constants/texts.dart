@@ -21,4 +21,7 @@ class TextSelector {
    static const String email = 'Email' ;
    static const String password = 'Password';
    static const String forgotPassword = 'Forgot Password?';
+   static const String signupTitle = 'Signup Screen' ;
+   static const String firstName = 'First Name' ;
+
 }
