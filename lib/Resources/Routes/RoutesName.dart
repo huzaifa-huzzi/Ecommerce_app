@@ -8,5 +8,6 @@ class RouteName{
   static const String onBoardingOne = '/OnBoardingScreenOne';
   // Authentication
   static const String loginScreen = '/LoginScreen';
+  static const String signupScreen = '/SignUpScreen';
 
 }
