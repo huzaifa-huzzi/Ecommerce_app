@@ -21,7 +21,14 @@ class TextSelector {
    static const String email = 'Email' ;
    static const String password = 'Password';
    static const String forgotPassword = 'Forgot Password?';
-   static const String signupTitle = 'Signup Screen' ;
+   static const String signupTitle = 'Lets Create Your account' ;
    static const String firstName = 'First Name' ;
+   static const String lastName = 'Last Name' ;
+   static const String userName = 'Username' ;
+   static const String phoneNo = 'Phone Number' ;
+   static const String agreedTo = 'I agreed to' ;
+   static const String and = 'and' ;
+   static const String privacyPolicy = 'Privacy Policy' ;
+   static const String termsOfUse = 'Terms of use' ;
 
 }
