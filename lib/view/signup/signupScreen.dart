@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
@@ -24,8 +25,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child:  Padding(
-            padding:EdgeInsets.all(Sizes.defaultSpace),
+            padding:const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Title
               Text(TextSelector.signupTitle,style: Theme.of(context).textTheme.headlineMedium,),
@@ -113,21 +115,70 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             text: '${TextSelector.agreedTo}',style: Theme.of(context).textTheme.bodySmall,
                           ),
                           TextSpan(
-                            text: TextSelector.privacyPolicy,style: Theme.of(context).textTheme.bodyMedium!.apply(),
+                            text: '${TextSelector.privacyPolicy}',style: Theme.of(context).textTheme.bodyMedium!.apply(
+                            color: themeController.isDarkTheme.value ? Colors.white : AppColor.primary,
+                          ),
                           ),
                           TextSpan(
                             text: '${TextSelector.and}',style: Theme.of(context).textTheme.bodySmall,
                           ),
                           TextSpan(
-                            text: TextSelector.termsOfUse,style: Theme.of(context).textTheme.bodyMedium!.apply(),
+                            text: TextSelector.termsOfUse,style: Theme.of(context).textTheme.bodyMedium!.apply(
+                            color: themeController.isDarkTheme.value ? Colors.white : AppColor.primary,
+                          ),
                           ),
                         ]
                       ))
                     ],
+                  ),
+                  const SizedBox(height:Sizes.spaceBtwSections),
+                  /// signupButton
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(onPressed: (){}, child:const  Text(TextSelector.createAccount)),
                   )
 
                 ],
-              ))
+              )),
+              const SizedBox(height: Sizes.spaceBtwSections,),
+              /// Divider
+              Row(
+                children: [
+                  Flexible(child: Divider(color: themeController.isDarkTheme.value ? AppColor.grey: AppColor.darkGrey,thickness: 2,indent:60 ,endIndent: 5,)),
+                  Obx((){
+                    return Text('Or SignUp with'.capitalize!,style: TextStyle(fontSize: 15,color:themeController.isDarkTheme.value ? AppColor.grey: AppColor.darkGrey),);
+                  }),
+                  Flexible(child: Divider(color: themeController.isDarkTheme.value ? AppColor.grey: AppColor.darkGrey,thickness: 2,indent:5 ,endIndent: 60,))
+                ],
+              ),
+              const  SizedBox(height: Sizes.spaceBtwSections,),
+               /// Social Media Accounts
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      border:Border.all(color: AppColor.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(onPressed: (){}, icon:const  Image(
+                        width: Sizes.iconMd,
+                        height: Sizes.iconMd,
+                        image: AssetImage('assets/icons/google.png'))),
+                  ),
+                  const  SizedBox(width: Sizes.spaceBtwItems,),
+                  Container(
+                    decoration: BoxDecoration(
+                      border:Border.all(color: AppColor.grey),
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child: IconButton(onPressed: (){}, icon:const  Image(
+                        width: Sizes.iconMd,
+                        height: Sizes.iconMd,
+                        image: AssetImage('assets/icons/facebook.png'))),
+                  ),
+                ],
+              )
             ],
           ),
         ),

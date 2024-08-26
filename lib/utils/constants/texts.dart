@@ -30,5 +30,6 @@ class TextSelector {
    static const String and = 'and' ;
    static const String privacyPolicy = 'Privacy Policy' ;
    static const String termsOfUse = 'Terms of use' ;
+   static const String createAccount = 'create Account' ;
 
 }
