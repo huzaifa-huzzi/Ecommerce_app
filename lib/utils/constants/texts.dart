@@ -21,6 +21,7 @@ class TextSelector {
    static const String email = 'Email' ;
    static const String password = 'Password';
    static const String forgotPassword = 'Forgot Password?';
+   static const String forgotPasswordScreenSubtitle = 'Dont worry some time people can forget too,enter your email and we will send you password reset link';
    static const String forgotPasswordTitle = 'Password Reset Email Sent' ;
    static const String forgotPasswordSubTitle = 'Your Account Security is our Priority!we have snt you a Secure Link to safety Change Your Password.' ;
    static const String signupTitle = 'Lets Create Your account' ;
