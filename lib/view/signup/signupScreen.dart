@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             expands: false,
                             decoration: InputDecoration(
                               labelText: TextSelector.firstName,
-                              prefixIcon: Icon(Iconsax.user),
+                              prefixIcon:const  Icon(Iconsax.user),
                               labelStyle: TextStyle(
                                 color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                               ),
@@ -160,7 +160,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           width: 24,
                           height: 24,
                           child: Checkbox(value: true, onChanged: (value) {
-// Checkbox logic
                           }),
                         ),
                         const SizedBox(width: Sizes.spaceBtwItems,),
