@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/Resources/Routes/RoutesName.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
@@ -208,7 +209,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(RouteName.emailVerification);
+                        },
                         child: const Text(TextSelector.createAccount),
                       ),
                     ),

@@ -31,5 +31,9 @@ class TextSelector {
    static const String privacyPolicy = 'Privacy Policy' ;
    static const String termsOfUse = 'Terms of use' ;
    static const String createAccount = 'create Account' ;
+   static const String confirmEmail = 'Verify your email address!' ;
+   static const String accountCreatedSuccessfully = 'Your Account has been created successfully!' ;
+   static const String confirmEmailSubtitle = 'congratulations! Your Account Awaits: Verify Email to start Shopping' ;
+
 
 }
