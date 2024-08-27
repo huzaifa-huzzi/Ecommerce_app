@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SpacingStyles {
 
    static EdgeInsetsGeometry paddingWithAppBarHeight = const EdgeInsets.only(
-     top:  Sizes.spaceBtwItems,
+     top:  Sizes.appbarHeight,
      left: Sizes.defaultSpace,
      bottom: Sizes.defaultSpace,
      right: Sizes.defaultSpace,

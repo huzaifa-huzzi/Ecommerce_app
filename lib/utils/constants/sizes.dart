@@ -65,4 +65,6 @@ class Sizes{
 
   //Grid View spacing
     static const double gridViewSpacing = 16 ;
+    // appBAr height
+    static const double appbarHeight = 56 ;
 }

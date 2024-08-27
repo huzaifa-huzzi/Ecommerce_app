@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/Resources/Components/successScreen/SuccessScreen.dart';
 import 'package:ecommerece_app/view/login/LoginScreen.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/cupertino.dart';
@@ -49,7 +50,14 @@ class _EmailVerificationState extends State<EmailVerification> {
               const SizedBox(height: Sizes.spaceBtwSections,),
 
               /// Buttons
-              SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child:const  Text('Continue')),),
+              SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(
+                  SuccessScreen(
+                     image: 'assets/images/sale.jpeg',
+                     title: TextSelector.accountCreatedSuccessfully,
+                    subtitle: TextSelector.accountCreatedSuccessfullySubtitle,
+                    onTap: () => Get.to(() =>const  LoginScreen()),
+
+              )), child:const  Text('Continue')),),
               const SizedBox(height: Sizes.spaceBtwItems,),
               SizedBox(width: double.infinity,child: TextButton(onPressed: (){}, child:const  Text('resend Email')),),
             ],

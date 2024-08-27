@@ -32,7 +32,8 @@ class TextSelector {
    static const String termsOfUse = 'Terms of use' ;
    static const String createAccount = 'create Account' ;
    static const String confirmEmail = 'Verify your email address!' ;
-   static const String accountCreatedSuccessfully = 'Your Account has been created successfully!' ;
+   static const String accountCreatedSuccessfully = 'Your Account successfully created!' ;
+   static const String accountCreatedSuccessfullySubtitle = 'Welcome to your Ultimate Shopping Destination.Your Account is created.Joy of Seamless Online Shopping!' ;
    static const String confirmEmailSubtitle = 'congratulations! Your Account Awaits: Verify Email to start Shopping' ;
 
 
