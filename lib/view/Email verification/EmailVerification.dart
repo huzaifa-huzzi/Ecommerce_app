@@ -46,13 +46,14 @@ class _EmailVerificationState extends State<EmailVerification> {
               Text(TextSelector.confirmEmail,style: Theme.of(context).textTheme.headlineMedium,textAlign: TextAlign.center,),
               const SizedBox(height: Sizes.spaceBtwItems,),
               Text('support@gmail.com',style: Theme.of(context).textTheme.labelLarge,textAlign: TextAlign.center,),
+              const SizedBox(height: Sizes.spaceBtwItems,),
               Text(TextSelector.confirmEmailSubtitle,style: Theme.of(context).textTheme.labelMedium,textAlign: TextAlign.center,),
               const SizedBox(height: Sizes.spaceBtwSections,),
 
               /// Buttons
               SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(
                   SuccessScreen(
-                     image: 'assets/images/sale.jpeg',
+                     image: 'assets/images/Animated.gif',
                      title: TextSelector.accountCreatedSuccessfully,
                     subtitle: TextSelector.accountCreatedSuccessfullySubtitle,
                     onTap: () => Get.to(() =>const  LoginScreen()),

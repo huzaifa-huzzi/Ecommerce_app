@@ -18,7 +18,7 @@ class TTextTheme{
     bodySmall: const TextStyle().copyWith(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.black.withOpacity(0.5)),
 
     labelLarge: const TextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.black),
-    labelMedium: const TextStyle().copyWith(fontSize: 32,fontWeight: FontWeight.bold,color: Colors.black.withOpacity(0.5)),
+    labelMedium: const TextStyle().copyWith(fontSize: 15,fontWeight: FontWeight.normal,color: Colors.black.withOpacity(0.5)),
   );
   // Text for the dark Theme color
   static TextTheme darkTextTheme = TextTheme(
@@ -35,7 +35,7 @@ class TTextTheme{
     bodySmall: const TextStyle().copyWith(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.white.withOpacity(0.5)),
 
     labelLarge: const TextStyle().copyWith(fontSize: 12,fontWeight: FontWeight.normal,color: Colors.white),
-    labelMedium: const TextStyle().copyWith(fontSize: 32,fontWeight: FontWeight.bold,color: Colors.white.withOpacity(0.5)),
+    labelMedium: const TextStyle().copyWith(fontSize: 15,fontWeight: FontWeight.normal,color: Colors.white.withOpacity(0.5)),
   );
 
 }
