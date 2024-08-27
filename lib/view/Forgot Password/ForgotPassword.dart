@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view/Forgot%20Password/ResetPassword/resetPassword.dart';
+import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
@@ -14,6 +15,9 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
+
+  final ThemeController themeController = Get.put(ThemeController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +35,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
              /// TextFields
             TextFormField(
-              decoration:const  InputDecoration(labelText: TextSelector.email,prefixIcon: Icon(Iconsax.direct_right)),
+              decoration:InputDecoration(labelText: TextSelector.email,prefixIcon: const Icon(Iconsax.direct_right),labelStyle: TextStyle(color: themeController.isDarkTheme.value ? Colors.white : Colors.black,),),
+
             ),
            const  SizedBox(height: Sizes.spaceBtwSections,),
 
