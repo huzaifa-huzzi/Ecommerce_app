@@ -91,7 +91,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ],
                                 ),
                                 //Forgot Button
-                                TextButton(onPressed: (){}, child: const Text(TextSelector.forgotPassword))
+                                TextButton(onPressed: (){
+                                  Get.toNamed(RouteName.forgotPassword);
+                                }, child: const Text(TextSelector.forgotPassword))
                               ],
                             ),
                             const  SizedBox(height: Sizes.spaceBtwItems,),

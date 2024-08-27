@@ -10,5 +10,6 @@ class RouteName{
   static const String loginScreen = '/LoginScreen';
   static const String signupScreen = '/SignUpScreen';
   static const String emailVerification = '/EmailVerification';
+  static const String forgotPassword = '/ForgotPassword';
 
 }

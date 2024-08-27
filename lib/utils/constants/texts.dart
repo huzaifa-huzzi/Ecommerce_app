@@ -21,6 +21,8 @@ class TextSelector {
    static const String email = 'Email' ;
    static const String password = 'Password';
    static const String forgotPassword = 'Forgot Password?';
+   static const String forgotPasswordTitle = 'Password Reset Email Sent' ;
+   static const String forgotPasswordSubTitle = 'Your Account Security is our Priority!we have snt you a Secure Link to safety Change Your Password.' ;
    static const String signupTitle = 'Lets Create Your account' ;
    static const String firstName = 'First Name' ;
    static const String lastName = 'Last Name' ;
@@ -35,6 +37,7 @@ class TextSelector {
    static const String accountCreatedSuccessfully = 'Your Account successfully created!' ;
    static const String accountCreatedSuccessfullySubtitle = 'Welcome to your Ultimate Shopping Destination.Your Account is created.Joy of Seamless Online Shopping!' ;
    static const String confirmEmailSubtitle = 'congratulations! Your Account Awaits: Verify Email to start Shopping' ;
+
 
 
 }
