@@ -4,8 +4,9 @@ class RouteName{
 
    //splash Screen
   static const String splashScreen = '/';
- // onBoarding Screens
+ // view Screens
   static const String onBoardingOne = '/OnBoardingScreenOne';
+  static const String dashBoardScreen = '/OnBoardingScreenOne';
   // Authentication
   static const String loginScreen = '/LoginScreen';
   static const String signupScreen = '/SignUpScreen';

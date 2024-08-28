@@ -1,4 +1,3 @@
-import 'package:ecommerece_app/Resources/Components/successScreen/SuccessScreen.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:ecommerece_app/view/login/LoginScreen.dart';

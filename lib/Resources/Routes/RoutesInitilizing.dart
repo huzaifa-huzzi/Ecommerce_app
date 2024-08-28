@@ -1,4 +1,5 @@
 import 'package:ecommerece_app/Resources/Routes/RoutesName.dart';
+import 'package:ecommerece_app/view/DashBoard%20screen/DashBoardScreen.dart';
 import 'package:ecommerece_app/view/Email%20verification/EmailVerification.dart';
 import 'package:ecommerece_app/view/Forgot%20Password/ForgotPassword.dart';
 import 'package:ecommerece_app/view/login/LoginScreen.dart';
@@ -14,6 +15,7 @@ class AppRoutes{
     GetPage(name:RouteName.splashScreen , page: () =>  SplashScreen()),
     // Views
     GetPage(name:RouteName.onBoardingOne , page: () =>const   OnBoardingScreenOne()),
+    GetPage(name:RouteName.dashBoardScreen , page: () =>const   DashboardScreen()),
     //Authentication
     GetPage(name:RouteName.onBoardingOne , page: () =>const   LoginScreen()),
     GetPage(name:RouteName.signupScreen , page: () =>const   SignUpScreen()),
