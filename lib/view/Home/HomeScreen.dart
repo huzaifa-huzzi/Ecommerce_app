@@ -1,4 +1,5 @@
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
+import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             ClipPath(
-              clipper: ,
+              clipper: CurvedEdges(),
               child: Container(
                 color: AppColor.primary,
                 padding:const EdgeInsets.all(0),
