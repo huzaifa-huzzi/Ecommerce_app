@@ -1,4 +1,10 @@
+import 'package:ecommerece_app/view/Home/HomeScreen.dart';
+import 'package:ecommerece_app/view/Store/StoreScreen.dart';
+import 'package:ecommerece_app/view/profile/ProfileScreen.dart';
+import 'package:ecommerece_app/view/wishlist/wishListScreen.dart';
+import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -12,14 +18,16 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+  final ThemeController themeController = Get.put(ThemeController());
 
 
 
   List<Widget> _buildScreens() {
     return  const [
       HomeScreen(),
-      MessagesScreen(),
-      ProflieScreen(),
+      StoreScreen(),
+      WishlistScreen(),
+      ProfileScreen(),
     ];
   }
 
@@ -35,21 +43,21 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
       PersistentBottomNavBarItem(
         icon:const Icon(Icons.shop,color: Colors.white,),
-        activeColorPrimary: Colors.black,
-        inactiveIcon: Icon(Iconsax.shop,color: AppColors.textFieldDefaultBorderColor,),
+        activeColorPrimary: themeController.isDarkTheme.value ? Colors.white : Colors.black ,
+        inactiveIcon: Icon(Iconsax.shop,color: themeController.isDarkTheme.value ? Colors.white : Colors.black ,),
         title: ('shop'),
       ),
       PersistentBottomNavBarItem(
           icon:const Icon(Iconsax.heart,color: Colors.black,),
-          activeColorPrimary: Colors.black,
-          inactiveIcon:  const  Icon(Iconsax.heart,color:Colors.white),
+          activeColorPrimary: themeController.isDarkTheme.value ? Colors.white : Colors.black ,
+          inactiveIcon:  Icon(Iconsax.heart,color:themeController.isDarkTheme.value ? Colors.white : Colors.black),
         title: ('Wishlist'),
 
       ),
       PersistentBottomNavBarItem(
           icon:const Icon(Iconsax.user,color: Colors.black,),
-          activeColorPrimary: ,
-          inactiveIcon:  const  Icon(Iconsax.user,color:Colors.white),
+          activeColorPrimary:themeController.isDarkTheme.value ? Colors.white : Colors.black  ,
+          inactiveIcon:  Icon(Iconsax.user,color:themeController.isDarkTheme.value ? Colors.white : Colors.black ),
         title: ('Profile'),
       ),
     ];
@@ -71,7 +79,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     stateManagement: true, // Default is true.
     hideNavigationBarWhenKeyboardAppears: true,
     padding: const EdgeInsets.only(top: 8),
-    backgroundColor: Colors.grey.shade900,
+    backgroundColor:themeController.isDarkTheme.value ? Colors.white : Colors.black ,
     isVisible: true,
     animationSettings: const NavBarAnimationSettings(
     navBarItemAnimation: ItemAnimationSettings( // Navigation Bar's items animation properties.
@@ -86,7 +94,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
     ),
     confineToSafeArea: true,
     navBarHeight: kBottomNavigationBarHeight,
-    navBarStyle: _navBarStyle, // Choose the nav bar style with this property
+    navBarStyle:NavBarStyle.style1 , // Choose the nav bar style with this property
+    ),
     );
   }
 }
