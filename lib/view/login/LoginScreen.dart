@@ -3,6 +3,7 @@ import 'package:ecommerece_app/Resources/SpacingStyles/SpcingStyle.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
+import 'package:ecommerece_app/view/DashBoard%20screen/DashBoardScreen.dart';
 import 'package:ecommerece_app/view/Forgot%20Password/ForgotPassword.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
@@ -99,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const  SizedBox(height: Sizes.spaceBtwItems,),
                             // SignIn Button
-                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.toNamed(RouteName.dashBoardScreen) , child: const Text('Sign in')),),
+                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.off(DashboardScreen()) , child: const Text('Sign in')),),
                            const  SizedBox(height: Sizes.spaceBtwItems,),
                             // create Account
                             SizedBox(width: double.infinity,child: OutlinedButton(onPressed: ()=>Get.toNamed(RouteName.signupScreen) , child: const Text('Create Account')),),
