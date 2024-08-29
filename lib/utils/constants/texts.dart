@@ -15,6 +15,7 @@ class TextSelector {
 
    // Home
  static const String homeAppbarTitle = 'Good Day For Shopping ' ;
+   static const String homeAppbarSubtitle = 'Huzaifa Khan' ;
  // Authentication
    static const String loginTitle = 'Welcome back,' ;
    static const String loginSubTitle = 'Discover Limitless choices and unMatched Convenience' ;
