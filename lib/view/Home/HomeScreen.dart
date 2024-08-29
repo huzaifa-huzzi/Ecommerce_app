@@ -44,34 +44,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           backgroundColor: AppColor.textWhite.withOpacity(0.1),
                         ),
                       ),
-                      HomeAppBarWidget(),
-                      /// Centering the search bar vertically in the available space
-                      Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            height: MediaQuery.of(context).size.width * 0.15,
-                            padding: EdgeInsets.all(Sizes.md),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(Sizes.cardRadiusLg),
-                              border: Border.all(color: AppColor.grey),
-                            ),
-                            child: const Row(
-                              children: [
-                                Icon(Iconsax.search_normal, color: AppColor.darkerGrey),
-                                SizedBox(width: Sizes.defaultSpace),
-                                Text(
-                                  "Search in store",
-                                  style: TextStyle(color: AppColor.darkerGrey),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
+                     const  HomeAppBarWidget(),
+
+                      /// Positioning the search bar below the AppBar
+                      HomeSearchBar(),
                     ],
                   ),
                 ),
@@ -83,3 +59,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
