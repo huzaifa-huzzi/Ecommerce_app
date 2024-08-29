@@ -1,10 +1,10 @@
 import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
+import 'package:ecommerece_app/Resources/Widgets/searchBAr/HomeSearchBAr.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -47,7 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
                      const  HomeAppBarWidget(),
 
                       /// Positioning the search bar below the AppBar
-                      HomeSearchBar(),
+                      const HomeSearchBar(text: 'Search in store'),
+                      const SizedBox(height: Sizes.spaceBtwSections,)
+                      /// Categories
                     ],
                   ),
                 ),

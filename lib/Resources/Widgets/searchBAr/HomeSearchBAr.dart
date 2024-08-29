@@ -9,7 +9,7 @@ import '../../../utils/constants/sizes.dart';
 
 class HomeSearchBar extends StatelessWidget {
   const HomeSearchBar({
-    super.key, required this.text, this.icon,  this.showBackground = true,  this.showBorder = true,
+    super.key, required this.text, this.icon = Iconsax.search_normal,  this.showBackground = true,  this.showBorder = true,
   });
 
    final String text;
@@ -36,13 +36,13 @@ class HomeSearchBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(Sizes.cardRadiusLg),
             border:showBorder? Border.all(color: AppColor.grey)  : null,
           ),
-          child: const Row(
+          child:  Row(
             children: [
-              Icon(Iconsax.search_normal, color: AppColor.darkerGrey),
-              SizedBox(width: Sizes.defaultSpace),
+              Icon(Iconsax.search_normal, color: themeController.isDarkTheme.value ? Colors.white : AppColor.darkerGrey),
+             const  SizedBox(width: Sizes.defaultSpace),
               Text(
                 "Search in store",
-                style: TextStyle(color: AppColor.darkerGrey),
+                style: TextStyle(color: themeController.isDarkTheme.value ? Colors.white : AppColor.darkerGrey),
               ),
             ],
           ),
