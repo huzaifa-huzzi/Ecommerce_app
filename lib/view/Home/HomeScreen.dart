@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -32,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Positioned(top: -150,right: -230,child: CircularContainer(backgroundColor: AppColor.textWhite.withOpacity(0.1),)),
                       Positioned(top: 100,right: -310,child: CircularContainer(backgroundColor: AppColor.textWhite.withOpacity(0.1))),
+                      SizedBox(height:Sizes.defaultSpace ,),
                       AppBar(
                         title: Column(
                           children: [
@@ -42,9 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         actions: [
                           Stack(
                             children: [
-                              IconButton(onPressed: (){}, icon:const Icon(Iconsax.shopping_bag,)),
+                              IconButton(onPressed: (){}, icon:const Icon(Iconsax.shopping_bag,color: Colors.white,)),
                               Positioned(
-                                right: 0,
+                                right: 22,
                                   child: Container(
                                     width: 18,
                                     height: 18,
