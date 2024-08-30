@@ -1,4 +1,5 @@
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/utils/constants/texts.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,13 +16,14 @@ class HomeAppBarWidget extends StatelessWidget {
       title: Column(
         children: [
           Text(TextSelector.homeAppbarTitle,style: Theme.of(context).textTheme.labelMedium!.apply(color: AppColor.grey),),
+          SizedBox(height:MediaQuery.of(context).size.height * .001,),
           Text(TextSelector.homeAppbarSubtitle,style: Theme.of(context).textTheme.headlineSmall!.apply(color: Colors.white),)
         ],
       ),
       actions: [
         Stack(
           children: [
-            IconButton(onPressed: (){}, icon: Icon(Iconsax.shopping_bag,color: Colors.white,)),
+            IconButton(onPressed: (){}, icon:const Icon(Iconsax.shopping_bag,color: Colors.white,)),
             Positioned(
                 right: 22,
                 child: Container(
