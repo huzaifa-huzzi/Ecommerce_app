@@ -1,12 +1,13 @@
 import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
-import 'package:ecommerece_app/Resources/Widgets/VerticalImageWidget/verticalImageWidget.dart';
-import 'package:ecommerece_app/Resources/Widgets/searchBAr/HomeSearchBAr.dart';
-import 'package:ecommerece_app/Resources/Widgets/sectionHeading/sectionHeadingWidget.dart';
+import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/verticalImageWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+
+import '../../Resources/common widgets/searchBAr/HomeSearchBAr.dart';
+import '../../Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
