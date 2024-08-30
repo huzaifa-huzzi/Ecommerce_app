@@ -2,6 +2,7 @@ import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
 import 'package:ecommerece_app/Resources/Widgets/searchBAr/HomeSearchBAr.dart';
+import 'package:ecommerece_app/Resources/Widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -48,8 +49,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       /// Positioning the search bar below the AppBar
                       const HomeSearchBar(text: 'Search in store'),
-                      const SizedBox(height: Sizes.spaceBtwSections,)
+                      const SizedBox(height: Sizes.spaceBtwSections,),
                       /// Categories
+                      Padding(
+                          padding: EdgeInsets.only(left: Sizes.defaultSpace),
+                        child: Column(
+                          children: [
+                            SectionHeadingWidget(title: 'Popular Categories', onPressed: (){},showActionButton: false,),
+
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
