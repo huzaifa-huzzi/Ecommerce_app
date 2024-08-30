@@ -52,11 +52,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       const SizedBox(height: Sizes.spaceBtwSections,),
                       /// Categories
                       Padding(
-                          padding: EdgeInsets.only(left: Sizes.defaultSpace),
+                          padding:const  EdgeInsets.only(left: Sizes.defaultSpace),
                         child: Column(
                           children: [
                             SectionHeadingWidget(title: 'Popular Categories', onPressed: (){},showActionButton: false,),
+                            const SizedBox(height: Sizes.spaceBtwItems,),
+                            ListView.builder(
+                                itemCount: 6,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context,index){
+                               return Column(
+                                 children: [
+                                   Container(
+                                     width: 56,
+                                     height: 56,
+                                     padding: EdgeInsets.all(Sizes.sm),
+                                     decoration: BoxDecoration(
+                                       color: Colors.white,
+                                       borderRadius: BorderRadiusDirectional.circular(100)
+                                     ),
+                                     child:const  Center(
+                                       child: Image(image: AssetImage(''),fit: BoxFit.cover,color: AppColor.dark,),
+                                     ),
+                                   ),
+                                   const SizedBox(height: Sizes.spaceBtwItems /2,),
 
+                                 ],
+                               );
+                              }),
                           ],
                         ),
                       )
