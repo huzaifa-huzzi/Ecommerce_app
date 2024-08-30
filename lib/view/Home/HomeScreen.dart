@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
+import 'package:ecommerece_app/Resources/Widgets/VerticalImageWidget/verticalImageWidget.dart';
 import 'package:ecommerece_app/Resources/Widgets/searchBAr/HomeSearchBAr.dart';
 import 'package:ecommerece_app/Resources/Widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
@@ -55,31 +56,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding:const  EdgeInsets.only(left: Sizes.defaultSpace),
                         child: Column(
                           children: [
-                            SectionHeadingWidget(title: 'Popular Categories', onPressed: (){},showActionButton: false,),
+                            SectionHeadingWidget(title: 'Popular Categories', onPressed: (){},showActionButton: false,textColor:AppColor.textWhite,),
                             const SizedBox(height: Sizes.spaceBtwItems,),
-                            ListView.builder(
-                                itemCount: 6,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context,index){
-                               return Column(
-                                 children: [
-                                   Container(
-                                     width: 56,
-                                     height: 56,
-                                     padding: EdgeInsets.all(Sizes.sm),
-                                     decoration: BoxDecoration(
-                                       color: Colors.white,
-                                       borderRadius: BorderRadiusDirectional.circular(100)
-                                     ),
-                                     child:const  Center(
-                                       child: Image(image: AssetImage(''),fit: BoxFit.cover,color: AppColor.dark,),
-                                     ),
-                                   ),
-                                   const SizedBox(height: Sizes.spaceBtwItems /2,),
-
-                                 ],
-                               );
-                              }),
+                            SizedBox(
+                              height: 80,
+                              child: ListView.builder(
+                                  itemCount: 6,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context,index){
+                                 return VerticalImageWidget(image: '', title: 'Shoes', onPressed: (){});
+                                }),
+                            ),
                           ],
                         ),
                       )
@@ -94,5 +81,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
