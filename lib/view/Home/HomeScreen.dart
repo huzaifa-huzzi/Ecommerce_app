@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
@@ -95,19 +96,64 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-           SizedBox(height: Sizes.defaultSpace,),
+           const SizedBox(height: Sizes.defaultSpace,),
            /// body
-            Container(
-              width: 380,
-              height: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(Sizes.md),
-                child: Image.asset(
-                  'assets/banners/banner-1.png',
-                  fit: BoxFit.contain, // or BoxFit.fill
-                ),
-              ),
+            Column(
+              children: [
+                CarouselSlider(
+                    items: [
+                      Container(
+                        width: 350,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(Sizes.md),
+                          child: Image.asset(
+                            'assets/banners/banner-1.png',
+                            fit: BoxFit.cover, // or BoxFit.fill
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 350,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(Sizes.md),
+                          child: Image.asset(
+                            'assets/banners/banner-1.png',
+                            fit: BoxFit.cover, // or BoxFit.fill
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: 350,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(Sizes.md),
+                          child: Image.asset(
+                            'assets/banners/banner-1.png',
+                            fit: BoxFit.cover, // or BoxFit.fill
+                          ),
+                        ),
+                      )
+                    ],
+                    options: CarouselOptions(
+                      viewportFraction: 1
+                )),
+                 Row(
+                  children: [
+                    for(int i=0;i<3;i++) const  CircularContainer(
+                      width: 20,
+                      height: 4,
+                      backgroundColor: Colors.green,
+                      margin: EdgeInsets.only(right:10),
+                    ),
+
+                  ],
+                )
+
+              ],
             )
+
 
 
 
