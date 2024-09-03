@@ -4,6 +4,9 @@ import 'package:get/get.dart';
 import '../../../utils/constants/Colors.dart';
 import '../../../utils/constants/sizes.dart';
 
+
+
+
 class VerticalImageWidget extends StatelessWidget {
   const VerticalImageWidget({
     super.key,
