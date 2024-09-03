@@ -48,10 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           backgroundColor: AppColor.textWhite.withOpacity(0.1),
                         ),
                       ),
-        
                       // AppBar Widget
                       const HomeAppBarWidget(),
-        
                       // Search bar widget with proper positioning
                       const Positioned(
                         left: 0,
