@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
+import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/HomeSliderWidget.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/verticalImageWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
@@ -96,7 +97,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
            const SizedBox(height: Sizes.defaultSpace,),
            /// body
-          const HomeSliderWidget()
+          const HomeSliderWidget(),
+           const  ProductCardVertical(),
 
 
 
