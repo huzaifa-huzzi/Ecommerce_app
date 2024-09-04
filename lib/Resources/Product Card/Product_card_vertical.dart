@@ -13,7 +13,7 @@ class ProductCardVertical extends StatelessWidget {
       width: 180,
       decoration: BoxDecoration(
         boxShadow: [
-          BoxShadow(
+          const BoxShadow(
             color: Colors.black26,
             blurRadius: 10.0,
             offset: Offset(0, 10),
@@ -31,7 +31,7 @@ class ProductCardVertical extends StatelessWidget {
           Container(
             height: 180,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(16.0),
                 topRight: Radius.circular(16.0),
               ),
@@ -52,7 +52,7 @@ class ProductCardVertical extends StatelessWidget {
                       height: 120,
                       fit: BoxFit.contain, // Ensures the image maintains its aspect ratio
                       errorBuilder: (context, error, stackTrace) {
-                        return Center(
+                        return const Center(
                           child: Icon(Icons.error, color: Colors.red),
                         );
                       },
@@ -65,7 +65,7 @@ class ProductCardVertical extends StatelessWidget {
                   top: 12,
                   left: 12,
                   child: Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 8.0,
                       vertical: 4.0,
                     ),
@@ -73,7 +73,7 @@ class ProductCardVertical extends StatelessWidget {
                       color: Colors.yellow.withOpacity(0.8),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    child: Text(
+                    child: const Text(
                       '25%',
                       style: TextStyle(
                         color: Colors.black,
