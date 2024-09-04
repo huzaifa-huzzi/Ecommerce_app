@@ -5,7 +5,9 @@ import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdge
 import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/verticalImageWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
+import 'package:ecommerece_app/view_model/Controller/HomeController/HomeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Resources/common widgets/searchBAr/HomeSearchBAr.dart';
 import '../../Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
@@ -75,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             // ListView inside Expanded
                             Expanded(
                               child: ListView.builder(
-                                itemCount: 6,
+                                itemCount: 3,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   return VerticalImageWidget(
@@ -96,61 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
            const SizedBox(height: Sizes.defaultSpace,),
            /// body
-            Column(
-              children: [
-                CarouselSlider(
-                    items: [
-                      Container(
-                        width: 350,
-                        height: 200,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(Sizes.md),
-                          child: Image.asset(
-                            'assets/banners/banner-1.png',
-                            fit: BoxFit.cover, // or BoxFit.fill
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 350,
-                        height: 200,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(Sizes.md),
-                          child: Image.asset(
-                            'assets/banners/banner-1.png',
-                            fit: BoxFit.cover, // or BoxFit.fill
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 350,
-                        height: 200,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(Sizes.md),
-                          child: Image.asset(
-                            'assets/banners/banner-1.png',
-                            fit: BoxFit.cover, // or BoxFit.fill
-                          ),
-                        ),
-                      )
-                    ],
-                    options: CarouselOptions(
-                      viewportFraction: 1
-                )),
-                 Row(
-                  children: [
-                    for(int i=0;i<3;i++) const  CircularContainer(
-                      width: 20,
-                      height: 4,
-                      backgroundColor: Colors.green,
-                      margin: EdgeInsets.only(right:10),
-                    ),
-
-                  ],
-                )
-
-              ],
-            )
+           const  HomeSliderWidget()
 
 
 
