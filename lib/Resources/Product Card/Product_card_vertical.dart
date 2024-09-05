@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -102,7 +103,15 @@ class ProductCardVertical extends StatelessWidget {
               ],
             ),
           ),
-          // You can add more details below the image as needed
+          /// -- Details
+          Padding(
+              padding: EdgeInsets.only(left: Sizes.sm),
+            child: Column(
+              children: [
+
+              ],
+            ),
+          )
         ],
       ),
     );

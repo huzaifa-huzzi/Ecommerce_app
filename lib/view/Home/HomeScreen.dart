@@ -100,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const HomeSliderWidget(),
             const SizedBox(height: Sizes.defaultSpace,),
            const  ProductCardVertical(),
+            const SizedBox(height: Sizes.defaultSpace,),
 
 
 
