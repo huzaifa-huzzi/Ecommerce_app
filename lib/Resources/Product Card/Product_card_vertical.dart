@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
@@ -115,14 +116,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   const ProductTitleText(title: 'Nike Air Shoes', smallSize: true,),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
-                  Row(
-                    children: [
-                      Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium,),
-                      const SizedBox(width: Sizes.xs,),
-                      const Icon(Iconsax.verify5, color: AppColor.primary, size: Sizes.iconXs,),
-                    ],
-                  ),
-                  // Remove Spacer and ensure proper alignment
+                  BrandNameWithIcon(brandName: 'Nike'),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

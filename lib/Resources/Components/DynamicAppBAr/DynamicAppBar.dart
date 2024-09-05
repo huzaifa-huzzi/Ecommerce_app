@@ -6,12 +6,15 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String subtitle;
   final int cartItemCount;
+  final Color? color;
 
   const DynamicAppBar({
     Key? key,
     required this.title,
     required this.subtitle,
     this.cartItemCount = 0,
+    this.color,
+
   }) : super(key: key);
 
   @override
@@ -36,7 +39,7 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(Iconsax.shopping_bag, color: Colors.white),
+              icon: const Icon(Iconsax.shopping_bag, color: Colors.black),
             ),
             if (cartItemCount > 0)
               Positioned(
@@ -52,7 +55,7 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
                     child: Text(
                       '$cartItemCount',
                       style: Theme.of(context).textTheme.labelLarge!.apply(
-                        color: AppColor.textWhite,
+                        color: color,
                         fontSizeFactor: 0.8,
                       ),
                     ),
