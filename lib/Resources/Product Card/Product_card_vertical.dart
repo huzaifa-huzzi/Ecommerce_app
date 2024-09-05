@@ -1,3 +1,5 @@
+import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
+import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
@@ -103,11 +105,50 @@ class ProductCardVertical extends StatelessWidget {
               ],
             ),
           ),
+         const  SizedBox(height: Sizes.spaceBtwItems / 2,),
           /// -- Details
           Padding(
-              padding: EdgeInsets.only(left: Sizes.sm),
+              padding: const EdgeInsets.only(left: Sizes.sm),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                const ProductTitleText(title: 'Nike Air Shoes',smallSize: true,),
+                const SizedBox(height: Sizes.spaceBtwItems / 2,),
+                Row(
+                  children: [
+                    Text('Nike',overflow: TextOverflow.ellipsis,maxLines: 1,style: Theme.of(context).textTheme.labelMedium,),
+                    const SizedBox(width: Sizes.xs,),
+                    const Icon(Iconsax.verify5,color: AppColor.primary,size: Sizes.iconXs,),
+
+                  ],
+                ),
+                const Spacer(),
+                 Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                     /// Price
+                    Text(
+                      '\$35.5',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                    Container(
+                      decoration:const  BoxDecoration(
+                        color: AppColor.dark,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(Sizes.cardRadiusMd),
+                          bottomRight: Radius.circular(Sizes.productImageRadius)
+                        )
+                      ),
+                      child: SizedBox(
+                        width: Sizes.iconLg * 1.2,
+                          height: Sizes.iconLg *1.2,
+                        child: Center(child: Icon(Iconsax.add,color: Colors.white,),),
+                      ),
+                    )
+                  ],
+                )
 
               ],
             ),
