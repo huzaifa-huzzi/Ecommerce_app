@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             // ListView inside Expanded
                             Expanded(
                               child: ListView.builder(
-                                itemCount: 3,
+                                itemCount: 6,
                                 scrollDirection: Axis.horizontal,
                                 itemBuilder: (context, index) {
                                   return VerticalImageWidget(
@@ -98,9 +98,18 @@ class _HomeScreenState extends State<HomeScreen> {
            const SizedBox(height: Sizes.defaultSpace,),
            /// body
           const HomeSliderWidget(),
-            const SizedBox(height: Sizes.defaultSpace,),
-           const  ProductCardVertical(),
-            const SizedBox(height: Sizes.defaultSpace,),
+            const SizedBox(height: Sizes.spaceBtwSections),
+           GridView.builder(
+              itemCount: 4,
+               shrinkWrap: true,
+               padding: EdgeInsets.zero,
+               physics:const  NeverScrollableScrollPhysics(),
+               gridDelegate:const
+               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: Sizes.gridViewSpacing,crossAxisSpacing: Sizes.gridViewSpacing,mainAxisExtent: 288), itemBuilder: (_,index){
+             return const  ProductCardVertical();
+           }),
+
+
 
 
 

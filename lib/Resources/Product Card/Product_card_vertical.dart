@@ -14,7 +14,7 @@ class ProductCardVertical extends StatelessWidget {
     final ThemeController themeController = Get.put(ThemeController());
     return GestureDetector(
       child: Container(
-        width: 180,
+        width: 140,
         decoration: BoxDecoration(
           boxShadow: const [
             BoxShadow(
@@ -63,7 +63,7 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   /// Sale Tag
                   Positioned(
                     top: 12,
@@ -86,7 +86,7 @@ class ProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
-      
+
                   /// Favourite Icon
                   Positioned(
                     top: 12,
@@ -106,28 +106,28 @@ class ProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-           const  SizedBox(height: Sizes.spaceBtwItems / 2,),
+            const SizedBox(height: Sizes.spaceBtwItems / 2,),
             /// -- Details
             Padding(
-                padding: const EdgeInsets.only(left: Sizes.sm),
+              padding: const EdgeInsets.only(left: Sizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(title: 'Nike Air Shoes',smallSize: true,),
+                  const ProductTitleText(title: 'Nike Air Shoes', smallSize: true,),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
                   Row(
                     children: [
-                      Text('Nike',overflow: TextOverflow.ellipsis,maxLines: 1,style: Theme.of(context).textTheme.labelMedium,),
+                      Text('Nike', overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium,),
                       const SizedBox(width: Sizes.xs,),
-                      const Icon(Iconsax.verify5,color: AppColor.primary,size: Sizes.iconXs,),
-      
+                      const Icon(Iconsax.verify5, color: AppColor.primary, size: Sizes.iconXs,),
                     ],
                   ),
-                  const Spacer(),
-                   Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // Remove Spacer and ensure proper alignment
+                  const SizedBox(height: Sizes.spaceBtwItems / 2,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                       /// Price
+                      /// Price
                       Text(
                         '\$35.5',
                         maxLines: 1,
@@ -135,25 +135,26 @@ class ProductCardVertical extends StatelessWidget {
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       Container(
-                        decoration:const  BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: AppColor.dark,
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(Sizes.cardRadiusMd),
-                            bottomRight: Radius.circular(Sizes.productImageRadius)
-                          )
+                            bottomRight: Radius.circular(Sizes.productImageRadius),
+                          ),
                         ),
-                        child:const  SizedBox(
+                        child: const SizedBox(
                           width: Sizes.iconLg * 1.2,
-                            height: Sizes.iconLg *1.2,
-                          child: Center(child: Icon(Iconsax.add,color: Colors.white,),),
+                          height: Sizes.iconLg * 1.2,
+                          child: Center(
+                            child: Icon(Iconsax.add, color: Colors.white),
+                          ),
                         ),
-                      )
+                      ),
                     ],
-                  )
-      
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
