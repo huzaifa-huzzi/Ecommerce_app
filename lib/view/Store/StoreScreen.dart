@@ -27,23 +27,23 @@ class _StoreScreenState extends State<StoreScreen> {
           title: 'Store',
           subtitle: '',
           cartItemCount: 5,
-          color: appBarTextColor,
+          color:  themeController.isDarkTheme.value ? Colors.white : Colors.black,
         ),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
             backgroundColor: backgroundColor,
             elevation: 0,
-            expandedHeight: 400, // Adjust based on content
+            expandedHeight: 400,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
                 color: backgroundColor,
-                padding: const EdgeInsets.all(Sizes.defaultSpace), // Add padding here
+                padding: const EdgeInsets.all(Sizes.defaultSpace),
                 child: ListView(
-                  padding: EdgeInsets.zero, // Remove extra padding
+                  padding: EdgeInsets.zero,
                   children: [
-                    HomeSearchBar(text: 'Search in Store',),
+                   const  HomeSearchBar(text: 'Search in Store',),
                     const SizedBox(height: 10),
 
                     Row(
@@ -68,19 +68,18 @@ class _StoreScreenState extends State<StoreScreen> {
                     ),
                     const SizedBox(height: 10),
 
-                    // Container with a fixed height for GridView
                     Container(
-                      height: 300, // Adjust the height to fit your design
+                      height: 300,
                       child: GridView.builder(
-                        padding: EdgeInsets.zero, // Remove extra padding
-                        itemCount: 4, // Adjust based on your actual data
-                        shrinkWrap: true, // Important to prevent overflow
-                        physics: const NeverScrollableScrollPhysics(), // Disable internal scrolling
+                        padding: EdgeInsets.zero,
+                        itemCount: 4,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           mainAxisSpacing: Sizes.gridViewSpacing,
                           crossAxisSpacing: Sizes.gridViewSpacing,
-                          mainAxisExtent: 100, // Adjust as needed
+                          mainAxisExtent: 100,
                         ),
                         itemBuilder: (context, index) {
                           return GridingWithWidget();
@@ -94,10 +93,10 @@ class _StoreScreenState extends State<StoreScreen> {
           ),
         ],
         body: Container(
-          padding: const EdgeInsets.all(Sizes.defaultSpace), // Add padding to body
+          padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: ListView(
             children: [
-              // You can add more widgets here if needed
+
             ],
           ),
         ),

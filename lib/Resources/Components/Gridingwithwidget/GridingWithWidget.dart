@@ -17,11 +17,13 @@ class GridingWithWidget extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(Sizes.sm),
         decoration: BoxDecoration(
-          color: Colors.transparent,
+          color:themeController.isDarkTheme.value ? AppColor.darkerGrey
+              : Colors.white,
           borderRadius: BorderRadius.circular(8), // Use borderRadius if needed
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.1),
+              color: themeController.isDarkTheme.value ? AppColor.darkerGrey
+            : Colors.white,
               spreadRadius: 2,
               blurRadius: 4,
               offset: Offset(0, 2), // changes position of shadow
@@ -42,6 +44,7 @@ class GridingWithWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(28),
                 child: Image.asset(
+                  themeController.isDarkTheme.value ? 'assets/logos/dark_nike.png' :
                   'assets/logos/nike_logo.png',
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
@@ -58,7 +61,7 @@ class GridingWithWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const  Text(
                     'Nike',
                     style: TextStyle(
                       fontSize: 18, // Replace with TextSize.large if applicable

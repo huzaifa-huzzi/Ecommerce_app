@@ -1,5 +1,7 @@
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -19,6 +21,7 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeController themeController = Get.put(ThemeController());
     return AppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +42,7 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
           children: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(Iconsax.shopping_bag, color: Colors.black),
+              icon:  Icon(Iconsax.shopping_bag,color: themeController.isDarkTheme.value ? Colors.white : Colors.black ,),
             ),
             if (cartItemCount > 0)
               Positioned(
@@ -55,7 +58,7 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
                     child: Text(
                       '$cartItemCount',
                       style: Theme.of(context).textTheme.labelLarge!.apply(
-                        color: color,
+                        color:themeController.isDarkTheme.value ? Colors.white : Colors.black,
                         fontSizeFactor: 0.8,
                       ),
                     ),

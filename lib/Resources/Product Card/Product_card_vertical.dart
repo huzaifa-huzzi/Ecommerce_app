@@ -26,7 +26,7 @@ class ProductCardVertical extends StatelessWidget {
           ],
           borderRadius: BorderRadius.circular(16.0),
           color: themeController.isDarkTheme.value
-              ? Colors.grey[800]
+              ? AppColor.darkerGrey
               : Colors.white,
         ),
         child: Column(
@@ -41,8 +41,8 @@ class ProductCardVertical extends StatelessWidget {
                   topRight: Radius.circular(16.0),
                 ),
                 color: themeController.isDarkTheme.value
-                    ? Colors.grey[700]
-                    : Colors.grey[200],
+                    ? AppColor.dark
+                    : Colors.white,
               ),
               child: Stack(
                 children: [
