@@ -1,25 +1,9 @@
 import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../utils/constants/Colors.dart';
-import '../../../utils/constants/Sizes.dart';
-import '../../../utils/enum/enum.dart';
-import '../../../view_model/Controller/ThemeController/ThemeController.dart';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../utils/constants/Colors.dart';
 import '../../../utils/constants/Sizes.dart';
 import '../../../view_model/Controller/ThemeController/ThemeController.dart';
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../utils/constants/Colors.dart';
-import '../../../utils/constants/Sizes.dart';
-import '../../../view_model/Controller/ThemeController/ThemeController.dart';
 
 class GridingWithWidget extends StatelessWidget {
   const GridingWithWidget({super.key});
@@ -59,10 +43,10 @@ class GridingWithWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8), // Maintain shape of the logo
                 child: Image.asset(
-                  isDarkTheme ? 'assets/logos/dark_nike.png' : 'assets/logos/nike_logo.png',
+                  isDarkTheme ? 'assets/logos/dark_nike.png' : 'assets/logos/nike-3.png',
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
-                    return Container(color: Colors.red); // Show red background if image fails to load
+                    return Container(color: Colors.red);
                   },
                 ),
               ),
@@ -79,7 +63,7 @@ class GridingWithWidget extends StatelessWidget {
                   Text(
                     '256 Products',
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.bodyMedium, // Use appropriate text style
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],
               ),
