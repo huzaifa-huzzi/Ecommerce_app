@@ -1,25 +1,33 @@
-import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
-import 'package:ecommerece_app/Resources/Components/RoundedContainer/RoundedContainer.dat.dart';
-import 'package:ecommerece_app/utils/enum/enum.dart';
-import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/constants/Colors.dart';
 import '../../../utils/constants/Sizes.dart';
-
+import '../../../utils/enum/enum.dart';
+import '../../../view_model/Controller/ThemeController/ThemeController.dart';
 
 class GridingWithWidget extends StatelessWidget {
   const GridingWithWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final ThemeController themeController = Get.put(ThemeController());
+    final ThemeController themeController = Get.find<ThemeController>();
     return GestureDetector(
       onTap: () {},
-      child: RoundedContainer(
+      child: Container(
         padding: const EdgeInsets.all(Sizes.sm),
-        backgroundColor: Colors.transparent,
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          borderRadius: BorderRadius.circular(8), // Use borderRadius if needed
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 2,
+              blurRadius: 4,
+              offset: Offset(0, 2), // changes position of shadow
+            ),
+          ],
+        ),
         child: Row(
           children: [
             /// -- Icon
@@ -29,33 +37,42 @@ class GridingWithWidget extends StatelessWidget {
               padding: const EdgeInsets.all(Sizes.sm),
               decoration: BoxDecoration(
                 color: themeController.isDarkTheme.value ? AppColor.black : Colors.white,
-                borderRadius: BorderRadius.circular(100),
+                borderRadius: BorderRadius.circular(28),
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(100),
+                borderRadius: BorderRadius.circular(28),
                 child: Image.asset(
-                  'assets/banners/Nike.png',
+                  'assets/logos/nike_logo.png',
                   fit: BoxFit.cover,
-                  color: themeController.isDarkTheme.value ? Colors.white : AppColor.dark,
-                )
+                  errorBuilder: (context, error, stackTrace) {
+                    return Container(color: Colors.red); // Show red background if image fails to load
+                  },
+                ),
               ),
             ),
+
             const SizedBox(width: Sizes.spaceBtwItems / 2),
             /// -- Text
-             Expanded(
-               child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BrandNameWithIcon(brandName: 'Nike', brandTextSize: TextSize.large),
-                    Text(
-                      '256 Products',
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.labelMedium,
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Nike',
+                    style: TextStyle(
+                      fontSize: 18, // Replace with TextSize.large if applicable
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
-                ),
-             ),
+                  ),
+                  Text(
+                    '256 Products',
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.bodyMedium, // Use appropriate text style
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),

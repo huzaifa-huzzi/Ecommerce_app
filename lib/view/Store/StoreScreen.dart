@@ -1,11 +1,8 @@
 import 'package:ecommerece_app/Resources/Components/DynamicAppBAr/DynamicAppBar.dart';
-import 'package:ecommerece_app/Resources/common%20widgets/searchBAr/HomeSearchBAr.dart';
-import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
+import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
+import 'package:ecommerece_app/Resources/common widgets/searchBAr/HomeSearchBAr.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
-import '../../Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
-import '../../utils/constants/Colors.dart';
 import '../../view_model/Controller/ThemeController/ThemeController.dart';
 import '../../utils/constants/Sizes.dart';
 
@@ -22,69 +19,72 @@ class _StoreScreenState extends State<StoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DynamicAppBar(title: 'Store', subtitle: '',color: Colors.black,),
-      body: NestedScrollView(
-        headerSliverBuilder: (_, innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              pinned: true,
-              floating: true,
-              backgroundColor: themeController.isDarkTheme.value ? AppColor.black : Colors.white,
-              expandedHeight: 440,
-              flexibleSpace: Stack(
-                children: [
-                  const Positioned(
-                    top: 55,
-                    left: 0,
-                    right: 0,
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
-                      child: HomeSearchBar(
-                        text: 'Search in Store',
-                        showBackground: true,
-                        showBorder: true,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    top: 150, // Adjust the top position as needed
-                    left: 0,
-                    right: 0,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SectionHeadingWidget(title: 'Featured Brands', onPressed: () {}),
-                          const SizedBox(height: Sizes.spaceBtwItems / 1.5),
-                          Container(
-                            height: 200, // Adjust based on your design needs
-                            child: GridView.builder(
-                              itemCount: 4,
-                              shrinkWrap: true,
-                              padding: EdgeInsets.zero,
-                              physics: const NeverScrollableScrollPhysics(),
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: Sizes.gridViewSpacing,
-                                crossAxisSpacing: Sizes.gridViewSpacing,
-                                mainAxisExtent: 80,
-                              ),
-                              itemBuilder: (_, index) {
-                                return const GridingWithWidget(); // Your grid item widget
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            floating: true,
+            pinned: true,
+            snap: true, // Allows the app bar to snap back into view
+            flexibleSpace: FlexibleSpaceBar(
+              title: DynamicAppBar(
+                title: 'Store',
+                subtitle: 'Explore Our Collection',
+                cartItemCount: 5, // Example cart item count
+                color: Colors.white, // Optional color for the cart item count
               ),
             ),
-          ];
-        },
-        body: Container(), // Your body content goes here
+          ),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Search Bar (Replace with HomeSearchBar widget)
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
+                  child: HomeSearchBar(text: 'Search in Store'),
+                ),
+                const SizedBox(height: 20),
+
+                // Section Heading
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Featured Brands',
+                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Text('View All'),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+
+                // GridView (Integrating GridingWithWidget)
+                SizedBox(
+                  height: MediaQuery.of(context).size.height - 200, // Adjust the height as needed
+                  child: GridView.builder(
+                    padding: const EdgeInsets.symmetric(horizontal: Sizes.defaultSpace),
+                    itemCount: 4, // Adjust based on your actual data
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: Sizes.gridViewSpacing,
+                      crossAxisSpacing: Sizes.gridViewSpacing,
+                      mainAxisExtent: 100, // Adjust as needed
+                    ),
+                    itemBuilder: (context, index) {
+                      return GridingWithWidget();
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

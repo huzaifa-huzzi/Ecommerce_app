@@ -116,7 +116,7 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   const ProductTitleText(title: 'Nike Air Shoes', smallSize: true,),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
-                  BrandNameWithIcon(brandName: 'Nike'),
+                  const BrandNameWithIcon(brandName: 'Nike'),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
