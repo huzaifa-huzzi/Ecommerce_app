@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         left: 0,
                         top: 130,
                         right: 0,
-                        child: HomeSearchBar(text: 'Search in store'),
+                        child: HomeSearchBar(text: 'Search in store',),
                       ),
                       /// categories
                       Positioned(
