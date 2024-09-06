@@ -26,16 +26,19 @@ class BrandNameWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: Text(
+        Text(
             brandName,
             overflow: TextOverflow.ellipsis,
-            maxLines: 1,
-            style:brandTextSize == TextSize.small ? Theme.of(context).textTheme.labelMedium!.apply(color:color ) : brandTextSize == TextSize.medium ? Theme.of(context).textTheme.bodyLarge!.apply(color: color):brandTextSize == TextSize.large?Theme.of(context).textTheme.titleLarge!.apply(color: color):Theme.of(context).textTheme.bodyMedium!.apply(color: color),
+            style: brandTextSize == TextSize.small
+                ? Theme.of(context).textTheme.labelMedium!.apply(color: color)
+                : brandTextSize == TextSize.medium
+                ? Theme.of(context).textTheme.bodyLarge!.apply(color: color)
+                : brandTextSize == TextSize.large
+                ? Theme.of(context).textTheme.titleLarge!.apply(color: color)
+                : Theme.of(context).textTheme.bodyMedium!.apply(color: color),
           ),
-        ),
-        const SizedBox(width: Sizes.xs),
-        Icon(icon, color: iconColor, size: iconSize),
+        const SizedBox(width:Sizes.spaceBtwItems / 2), // Adjust width for spacing
+        Icon(icon, color: iconColor, size: Sizes.iconSm),
       ],
     );
   }

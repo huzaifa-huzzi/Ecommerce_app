@@ -114,9 +114,9 @@ class ProductCardVertical extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const ProductTitleText(title: 'Nike Air Shoes', smallSize: true,),
+                  const ProductTitleText(title: 'Nike Air Shoes', smallSize: false,),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
-                  const BrandNameWithIcon(brandName: 'Nike'),
+                  const BrandNameWithIcon(brandName: 'Nike',),
                   const SizedBox(height: Sizes.spaceBtwItems / 2,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
