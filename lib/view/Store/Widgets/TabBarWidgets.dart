@@ -1,32 +1,24 @@
-import 'package:ecommerece_app/utils/Devics/DeviceUtils.dart';
-import 'package:ecommerece_app/utils/constants/Colors.dart';
-import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 
-class TabBarStoreWidget extends StatelessWidget implements PreferredSizeWidget {
-  const TabBarStoreWidget({
-    super.key,
-    required this.themeController,
-    required this.tabs
-  });
+class TabBarStoreWidget extends StatefulWidget implements PreferredSizeWidget {
+  @override
+  _TabBarStoreWidgetState createState() => _TabBarStoreWidgetState();
 
-  final ThemeController themeController;
-  final List<Widget> tabs ;
+  @override
+  Size get preferredSize => const Size.fromHeight(50); // Adjust the height
+}
 
+class _TabBarStoreWidgetState extends State<TabBarStoreWidget> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: TabBar(
-          isScrollable:true,
-          indicatorColor: AppColor.primary,
-          unselectedLabelColor: AppColor.darkGrey,
-          labelColor: themeController.isDarkTheme.value ? Colors.white : AppColor.primary,
-          tabs:tabs
-      ),
+    return const TabBar(
+      tabs: [
+        Tab(text: 'Sports'),
+        Tab(text: 'Furniture'),
+        Tab(text: 'Electronics'),
+        Tab(text: 'Clothes'),
+        Tab(text: 'Cosmetics'),
+      ],
     );
   }
-
-  @override
-  // TODO: implement preferredSize
-  Size get preferredSize => Size.fromHeight(DeviceUtils.getAppBarHeight());
 }
