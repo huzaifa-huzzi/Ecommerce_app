@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 
 import '../../../utils/constants/sizes.dart';
 
-
 class CategoryTabWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -38,63 +37,99 @@ class CategoryTabWidget extends StatelessWidget {
               ),
             ],
           ),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              /// -- Icon
-              Container(
-                width: 56,
-                height: 56,
-                padding: const EdgeInsets.all(Sizes.sm),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8), // Maintain shape of the logo
-                  child: Image.asset(
-                    isDarkTheme ? 'assets/logos/dark_nike.png' : 'assets/logos/nike-3.png',
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Container(color: Colors.red);
-                    },
-                  ),
-                ),
-              ),
-
-              const SizedBox(width: Sizes.spaceBtwItems / 2),
-              /// -- Text
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const BrandNameWithIcon(brandName: 'Nike'),
-                    Text(
-                      '256 Products',
-                      overflow: TextOverflow.ellipsis,
-                      style: Theme.of(context).textTheme.bodyMedium,
+              Row(
+                children: [
+                  /// -- Icon
+                  Container(
+                    width: 56,
+                    height: 56,
+                    padding: const EdgeInsets.all(Sizes.sm),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8), // Maintain shape of the logo
+                      child: Image.asset(
+                        isDarkTheme ? 'assets/logos/dark_nike.png' : 'assets/logos/nike-3.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Container(color: Colors.red);
+                        },
+                      ),
                     ),
-                  ],
-                ),
-              ),
-              Expanded(
-                  child:  BrandShocaseStoreWidget(
-                    themeController: themeController,
-                    images: [
-                      'assets/images/product1.png',
-                      'assets/images/product2.png',
-                      'assets/images/product3.png',
-                    ],
-                    productCount: 26,
-
-
                   ),
+                  const SizedBox(width: Sizes.spaceBtwItems / 2),
+                  /// -- Text
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const BrandNameWithIcon(brandName: 'Nike'),
+                        Text(
+                          '256 Products',
+                          overflow: TextOverflow.ellipsis,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: Sizes.sm),
+
+              // Now the images (as per your screenshot)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Product Image 1
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image:const  DecorationImage(
+                        image: AssetImage('assets/banners/banner-1.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  // Product Image 2
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image:const  DecorationImage(
+                        image: AssetImage('assets/banners/banner-2.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  // Product Image 3
+                  Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image:const  DecorationImage(
+                        image: AssetImage('assets/banners/banner-3.png'),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
         ),
 
-
         const SizedBox(height: Sizes.spaceBtwSections),
+
         // Section Heading
         SectionHeadingWidget(title: 'You might like', onPressed: () {}),
         const SizedBox(height: Sizes.spaceBtwItems),
+
         // Product Grid
         GridView.builder(
           shrinkWrap: true,
@@ -114,4 +149,3 @@ class CategoryTabWidget extends StatelessWidget {
     );
   }
 }
-
