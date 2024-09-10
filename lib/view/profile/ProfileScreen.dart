@@ -1,13 +1,10 @@
 import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
 import 'package:ecommerece_app/Resources/Components/settingMenuTile/SettingMenuTileComponent.dart';
-import 'package:ecommerece_app/Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
-import 'package:ecommerece_app/view/profile/widget/ProfileAppBarScreen.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileAppBarWidgetSetting.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileNameAndImage.dart';
 import 'package:ecommerece_app/view/profile/widget/settingMenuTile.dart';
-import 'package:ecommerece_app/view/wishlist/Widgets/WishListAppBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
