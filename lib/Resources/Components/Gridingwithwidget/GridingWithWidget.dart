@@ -16,7 +16,7 @@ class GridingWithWidget extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: const EdgeInsets.all(Sizes.sm),
+        padding: const EdgeInsets.all(Sizes.defaultSpace),
         decoration: BoxDecoration(
           color: isDarkTheme ? Colors.black : Colors.white, // Background color based on theme
           borderRadius: BorderRadius.circular(8),

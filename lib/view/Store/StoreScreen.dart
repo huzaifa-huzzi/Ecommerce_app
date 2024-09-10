@@ -22,8 +22,12 @@ class _StoreScreenState extends State<StoreScreen> {
   @override
   Widget build(BuildContext context) {
     // Determine background color based on theme
-    final backgroundColor = themeController.isDarkTheme.value ? Colors.black : Colors.white;
-    final appBarTextColor = themeController.isDarkTheme.value ? Colors.white : Colors.black;
+    final backgroundColor = themeController.isDarkTheme.value
+        ? Colors.black
+        : Colors.white;
+    final appBarTextColor = themeController.isDarkTheme.value
+        ? Colors.white
+        : Colors.black;
 
     return DefaultTabController(
       length: 5,
@@ -35,11 +39,13 @@ class _StoreScreenState extends State<StoreScreen> {
           color: appBarTextColor,
         ),
         body: NestedScrollView(
-          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          headerSliverBuilder: (context, innerBoxIsScrolled) =>
+          [
             SliverAppBar(
               backgroundColor: backgroundColor,
               elevation: 0,
               expandedHeight: 400,
+              // Adjust this if needed
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
                 background: Container(
@@ -63,13 +69,14 @@ class _StoreScreenState extends State<StoreScreen> {
                           ),
                           TextButton(
                             onPressed: () {},
-                            child: Text('View All', style: TextStyle(color: appBarTextColor)),
+                            child: Text('View All',
+                                style: TextStyle(color: appBarTextColor)),
                           ),
                         ],
                       ),
                       const SizedBox(height: 10),
                       SizedBox(
-                        height: 300,
+                        height: 300, // Adjust height based on design
                         child: GridView.builder(
                           padding: EdgeInsets.zero,
                           itemCount: 4,
@@ -90,10 +97,14 @@ class _StoreScreenState extends State<StoreScreen> {
                   ),
                 ),
               ),
-              bottom: TabBarStoreWidget(),  // This now works correctly
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(60),
+                // Adjust size to add some space
+                child: TabBarStoreWidget(), // This now works correctly
+              ),
             ),
           ],
-          body:  TabBarView(
+          body: TabBarView(
             children: [
               CategoryTabWidget(),
               CategoryTabWidget(),
