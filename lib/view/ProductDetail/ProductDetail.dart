@@ -45,7 +45,7 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             /// Product Detail
-             Padding(
+             const Padding(
                  padding: EdgeInsets.only(right: Sizes.defaultSpace,left: Sizes.defaultSpace,bottom: Sizes.defaultSpace),
                child: Column(
                  children: [
