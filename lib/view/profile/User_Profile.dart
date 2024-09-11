@@ -1,5 +1,8 @@
+import 'package:ecommerece_app/Resources/Components/settingMenuTile/SettingMenuTileComponent.dart';
+import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view/profile/widget/UserProfileWidget/UserAppBArWidget.dart';
+import 'package:ecommerece_app/view/profile/widget/settingMenuTile.dart';
 import 'package:flutter/material.dart';
 
 
@@ -25,7 +28,7 @@ class _UserPRofileScreenState extends State<UserPRofileScreen> {
                 width: double.infinity,
                 child: Column(
                   children: [
-                  SizedBox(
+                 SizedBox(
                   width: 80,
                   height: 80,
                   child: CircleAvatar(
@@ -34,8 +37,16 @@ class _UserPRofileScreenState extends State<UserPRofileScreen> {
                     backgroundColor: Colors.grey.shade200,
                   ),
                 ),
+                  TextButton(onPressed: (){}, child:const  Text('Change Profile Picture'))
                   ],),
-              )
+              ),
+              /// Details
+              SizedBox(height: Sizes.spaceBtwItems / 2,),
+              const Divider(),
+            SizedBox(height : Sizes.spaceBtwItems),
+            ProfileScetionHEading(title: 'Profile Information', onPressed: (){}) ,
+              SizedBox(height:  Sizes.spaceBtwItems,),
+
             ],
           ),
         ),
