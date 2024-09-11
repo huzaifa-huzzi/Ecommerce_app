@@ -1,5 +1,6 @@
 import 'package:ecommerece_app/Resources/Components/CurvedEdges/CurvedEdges.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ImageSliderOfProductWidget.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/MainLargeImage.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ProductAppBarWidget.dart';
@@ -44,7 +45,19 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
             ),
             /// Product Detail
-
+             Padding(
+                 padding: EdgeInsets.only(right: Sizes.defaultSpace,left: Sizes.defaultSpace,bottom: Sizes.defaultSpace),
+               child: Column(
+                 children: [
+                    /// Rating & Share Button
+                   /// - Price,Titil,stack & Brand
+                   ///  - Attribution
+                   ///  CheckOut Button
+                   ///  Description
+                   ///  Reviews
+                 ],
+               ),
+             ),
           ],
         ),
       ),
