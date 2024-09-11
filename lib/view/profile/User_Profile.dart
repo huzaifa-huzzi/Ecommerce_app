@@ -32,7 +32,7 @@ class _UserPRofileScreenState extends State<UserPRofileScreen> {
                   width: 80,
                   height: 80,
                   child: CircleAvatar(
-                    backgroundImage:const AssetImage('assts/images/background@.png'),
+                    backgroundImage:const AssetImage('assets/images/background@.png'),
                     radius: 40,
                     backgroundColor: Colors.grey.shade200,
                   ),

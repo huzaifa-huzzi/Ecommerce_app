@@ -2,6 +2,7 @@ import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
+import 'package:ecommerece_app/view/ProductDetail/ProductDetail.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,6 +15,7 @@ class ProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.put(ThemeController());
     return GestureDetector(
+      onTap: () => Get.to(const ProductDetail()),
       child: Container(
         width: 140,
         decoration: BoxDecoration(
