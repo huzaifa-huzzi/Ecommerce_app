@@ -1,4 +1,6 @@
+import 'package:ecommerece_app/view/profile/User_Profile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/sizes.dart';
@@ -29,7 +31,7 @@ class ProfileNameandImage extends StatelessWidget {
                 'support@gmail.com',
                 style: Theme.of(context).textTheme.bodyMedium!.apply(color: Colors.white),
               ),
-              trailing: IconButton(onPressed: (){}, icon:const Icon(Iconsax.edit,color: Colors.white,)),
+              trailing: IconButton(onPressed: () => Get.to(const UserPRofileScreen()), icon:const Icon(Iconsax.edit,color: Colors.white,)),
             ),
             const SizedBox(height: Sizes.spaceBtwSections,)
 
