@@ -4,6 +4,7 @@ import 'package:ecommerece_app/view/splash/SplashScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
