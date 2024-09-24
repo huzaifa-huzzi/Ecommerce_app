@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils/constants/sizes.dart';
 
+
+
+
 class HomeSliderWidget extends StatelessWidget {
   const HomeSliderWidget({
     super.key,
