@@ -1,7 +1,4 @@
 
-
-
-
 class SessionManager {
   static final SessionManager _session = SessionManager._internal();
 
