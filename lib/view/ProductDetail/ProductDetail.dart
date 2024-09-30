@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 
 
+
 class ProductDetail extends StatefulWidget {
   const ProductDetail({super.key});
 
