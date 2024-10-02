@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../utils/constants/sizes.dart';
 
 
+
+
 class ImageSliderOfProductDetail extends StatelessWidget {
   const ImageSliderOfProductDetail({
     super.key,
