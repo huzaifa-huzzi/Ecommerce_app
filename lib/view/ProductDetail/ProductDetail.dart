@@ -1,5 +1,8 @@
+import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:ecommerece_app/Resources/Components/CurvedEdges/CurvedEdges.dart';
-import 'package:ecommerece_app/Resources/Components/RoundedContainer/RoundedContainer.dat.dart';
+import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
+import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
+import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ImageSliderOfProductWidget.dart';
@@ -9,7 +12,6 @@ import 'package:ecommerece_app/view/ProductDetail/Widgets/RatingWidget.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 
 
@@ -57,40 +59,66 @@ class _ProductDetailState extends State<ProductDetail> {
                child: Column(
                  children: [
                     /// Rating & share button
-                   RatingWidget(),
+                   const RatingWidget(),
                    /// - Price,Title,stack & Brand
-                    Row(
-                      children: [
-                        /// Sale Tag
-                        Positioned(
-                          top: 12,
-                          left: 12,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8.0,
-                              vertical: 4.0,
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.yellow.withOpacity(0.8),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            child: const Text(
-                              '25%',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: Sizes.spaceBtwItems,),
-                        /// Price
-                        Text('\$250',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
-                        SizedBox(width: Sizes.spaceBtwItems,),
-                        
-                      ],
-                    )
+                   Column(
+                     children: [
+                       Row(
+                         children: [
+                           /// Sale Tag
+                           Positioned(
+                             top: 12,
+                             left: 12,
+                             child: Container(
+                               padding: const EdgeInsets.symmetric(
+                                 horizontal: 8.0,
+                                 vertical: 4.0,
+                               ),
+                               decoration: BoxDecoration(
+                                 color: Colors.yellow.withOpacity(0.8),
+                                 borderRadius: BorderRadius.circular(8.0),
+                               ),
+                               child: const Text(
+                                 '25%',
+                                 style: TextStyle(
+                                   color: Colors.black,
+                                   fontWeight: FontWeight.bold,
+                                 ),
+                               ),
+                             ),
+                           ),
+                           const SizedBox(width: Sizes.spaceBtwItems,),
+                           /// Price
+                           Text('\$250',style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),),
+                           const SizedBox(width: Sizes.spaceBtwItems,),
+                           const ProductPriceText(price: '175',isLarge: true,)
+
+                         ],
+                       ),
+                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       Padding(
+                         padding: const EdgeInsets.only(right: 185),
+                         child: ProductTitleText(title: 'Pink Nike Sports Shoes'),
+                       ),
+                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       Row(
+                         children: [
+                           ProductTitleText(title: 'Status'),
+                           const SizedBox(width: Sizes.spaceBtwItems * 2,),
+                           Text('In Stack',style: Theme.of(context).textTheme.titleMedium)
+                         ],
+                       ),
+                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       Row(
+                         children: [
+
+                           BrandNameWithIcon(brandName: 'Nike',),
+                         ],
+                       )
+                     ],
+                   )
                    ///  - Attribution
+
                    ///  CheckOut Button
                    ///  Description
                    ///  Reviews

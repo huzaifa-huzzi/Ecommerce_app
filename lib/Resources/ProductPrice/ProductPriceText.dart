@@ -6,7 +6,8 @@ class ProductPriceText extends StatelessWidget {
     this.currencySign = '\$',
     required this.price,
     this.maxLines = 1,
-    this.lineThrough = false
+    this.lineThrough = false,
+    this.isLarge = false
 
   });
 
@@ -18,7 +19,17 @@ class ProductPriceText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-
-    )
+      '$currencySign$price', // Use string interpolation here
+      maxLines: maxLines,
+      overflow: TextOverflow.ellipsis,
+      style: isLarge
+          ? Theme.of(context).textTheme.headlineMedium!.apply(
+          decoration: lineThrough ? TextDecoration.lineThrough : null
+      )
+          : Theme.of(context).textTheme.titleLarge!.apply(
+          decoration: lineThrough ? TextDecoration.lineThrough : null
+      ),
+    );
   }
+
 }
