@@ -1,6 +1,5 @@
 import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:ecommerece_app/Resources/Components/CurvedEdges/CurvedEdges.dart';
-import 'package:ecommerece_app/Resources/Components/circularContainer/CircularContainer.dart';
 import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
@@ -8,6 +7,7 @@ import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ImageSliderOfProductWidget.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/MainLargeImage.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ProductAppBarWidget.dart';
+import 'package:ecommerece_app/view/ProductDetail/Widgets/ProductDetailAttributes.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/RatingWidget.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
@@ -95,30 +95,30 @@ class _ProductDetailState extends State<ProductDetail> {
 
                          ],
                        ),
-                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
-                       Padding(
-                         padding: const EdgeInsets.only(right: 185),
+                       const SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       const Padding(
+                         padding: EdgeInsets.only(right: 185),
                          child: ProductTitleText(title: 'Pink Nike Sports Shoes'),
                        ),
-                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       const SizedBox(height: Sizes.spaceBtwItems /1.5,),
                        Row(
                          children: [
-                           ProductTitleText(title: 'Status'),
+                           const ProductTitleText(title: 'Status'),
                            const SizedBox(width: Sizes.spaceBtwItems * 2,),
                            Text('In Stack',style: Theme.of(context).textTheme.titleMedium)
                          ],
                        ),
-                       SizedBox(height: Sizes.spaceBtwItems /1.5,),
-                       Row(
+                       const SizedBox(height: Sizes.spaceBtwItems /1.5,),
+                       const Row(
                          children: [
 
                            BrandNameWithIcon(brandName: 'Nike',),
                          ],
                        )
                      ],
-                   )
+                   ),
                    ///  - Attribution
-
+                     const ProductDetailAttributes()
                    ///  CheckOut Button
                    ///  Description
                    ///  Reviews
