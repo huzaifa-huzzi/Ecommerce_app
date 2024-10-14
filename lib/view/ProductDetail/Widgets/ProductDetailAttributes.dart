@@ -1,3 +1,4 @@
+import 'package:ecommerece_app/Resources/Components/choiceChip/ChoiceChip.dart';
 import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
@@ -91,7 +92,14 @@ class ProductDetailAttributes extends StatelessWidget {
             ],
           ),
         ),
-        // Add additional attributes here if needed
+        /// Attributes
+        Column(
+          children: [
+           SectionHeadingWidget(title: 'Colors', onPressed: (){}),
+            SizedBox(height: Sizes.spaceBtwItems / 2,),
+            CustomChoiceChip(text: 'Green', selected: true )
+          ],
+        )
       ],
     );
   }
