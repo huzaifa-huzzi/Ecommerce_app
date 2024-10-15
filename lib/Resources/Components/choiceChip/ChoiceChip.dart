@@ -16,19 +16,22 @@ class CustomChoiceChip extends StatelessWidget {  // Renamed to avoid conflict
 
   @override
   Widget build(BuildContext context) {
-    return ChoiceChip(
-      label:HelperFunction.getColor(text) != null ? const SizedBox() : const  Text(
-        '',
+    return Theme(
+      data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+      child: ChoiceChip(
+        label:HelperFunction.getColor(text) != null ? const SizedBox() : const  Text(
+          '',
+        ),
+        selected: selected,
+        onSelected: onSelected,
+        labelStyle: TextStyle(color: selected ? Colors.white : null),
+        avatar: HelperFunction.getColor(text) != null ?  RoundedContainer(width: 50,height: 50,backgroundColor:  HelperFunction.getColor(text) !,) : null ,
+         shape:HelperFunction.getColor(text) !=null ? const CircleBorder() : null,
+        backgroundColor:HelperFunction.getColor(text) !=null ? Colors.green : null,
+        labelPadding:HelperFunction.getColor(text) != null ?  EdgeInsets.all(0) : null,
+        padding:HelperFunction.getColor(text) != null ? EdgeInsets.all(0) : null,
+        selectedColor:Colors.green ,
       ),
-      selected: selected,
-      onSelected: onSelected,
-      labelStyle: TextStyle(color: selected ? Colors.white : null),
-      avatar: HelperFunction.getColor(text) != null ?  RoundedContainer(width: 50,height: 50,backgroundColor:  HelperFunction.getColor(text) !,) : null ,
-       shape:HelperFunction.getColor(text) !=null ? const CircleBorder() : null,
-      backgroundColor: Colors.green ,
-      labelPadding:HelperFunction.getColor(text) != null ?  EdgeInsets.all(0) : null,
-      padding:HelperFunction.getColor(text) != null ? EdgeInsets.all(0) : null,
-      selectedColor:Colors.green ,
     );
   }
 }

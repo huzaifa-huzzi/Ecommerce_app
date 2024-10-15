@@ -3,7 +3,6 @@ import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
-import 'package:ecommerece_app/view/ProductDetail/Widgets/BottomAddToCart.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,14 +18,17 @@ class ProductDetailAttributes extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.put(ThemeController());
 
-    return  Column(
-        crossAxisAlignment: CrossAxisAlignment.start, // Align content to the start
+    return SingleChildScrollView(
+      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Optional padding for better spacing
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: Sizes.spaceBtwItems),
+          // Product Information Container
           Container(
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
-              color: Colors.grey[200], // Background color similar to your screenshot
+              color: Colors.grey[200], // Background color
               borderRadius: BorderRadius.circular(10), // Rounded corners
               boxShadow: [
                 BoxShadow(
@@ -38,15 +40,14 @@ class ProductDetailAttributes extends StatelessWidget {
               ],
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start, // Align text and columns to start
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SectionHeadingWidget(
                   title: 'Variation',
                   onPressed: () {},
                   showActionButton: false,
                 ),
-                const SizedBox(height: Sizes.spaceBtwItems), // Space between rows
-
+                const SizedBox(height: Sizes.spaceBtwItems),
                 // Price Row
                 Row(
                   children: [
@@ -68,8 +69,7 @@ class ProductDetailAttributes extends StatelessWidget {
                     const ProductPriceText(price: '20'),
                   ],
                 ),
-                const SizedBox(height: Sizes.spaceBtwItems), // Space between rows
-
+                const SizedBox(height: Sizes.spaceBtwItems),
                 // Stock Row
                 Row(
                   children: [
@@ -84,8 +84,7 @@ class ProductDetailAttributes extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: Sizes.spaceBtwItems), // Space between rows
-
+                const SizedBox(height: Sizes.spaceBtwItems),
                 // Product Description (limited to 4 lines)
                 const ProductTitleText(
                   title:
@@ -96,83 +95,134 @@ class ProductDetailAttributes extends StatelessWidget {
               ],
             ),
           ),
-          /// Attributes
+          /// Attributes Section
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SectionHeadingWidget(title: 'Colors', onPressed: (){},showActionButton: false,),
-              const  SizedBox(height: Sizes.spaceBtwItems / 2,),
+              SectionHeadingWidget(title: 'Colors', onPressed: () {}, showActionButton: false),
+              const SizedBox(height: Sizes.spaceBtwItems / 2),
               Wrap(
                 spacing: 8,
                 children: [
-                  CustomChoiceChip(text: 'Green', selected: true,onSelected: (value){}),
-                  CustomChoiceChip(text: 'Blue', selected: false,onSelected: (value){} ),
-                  CustomChoiceChip(text: 'Yellow', selected: false,onSelected: (value){} ),
-                  CustomChoiceChip(text: 'Green', selected: true,onSelected: (value){}),
-                  CustomChoiceChip(text: 'Blue', selected: false,onSelected: (value){} ),
-                  CustomChoiceChip(text: 'Yellow', selected: false,onSelected: (value){} ),
+                  CustomChoiceChip(text: 'Green', selected: true, onSelected: (value) {}),
+                  CustomChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}),
+                  CustomChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {}),
                 ],
-              )
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SectionHeadingWidget(title: 'Size', onPressed: (){}),
-              const  SizedBox(height: Sizes.spaceBtwItems / 2,),
+              ),
+              const SizedBox(height: Sizes.spaceBtwItems),
+              SectionHeadingWidget(title: 'Size', onPressed: () {}),
+              const SizedBox(height: Sizes.spaceBtwItems / 2),
               Wrap(
                 spacing: 2,
                 children: [
-                  CustomChoiceChip(text: 'EU 34', selected: true,onSelected: (value){} ),
-                  CustomChoiceChip(text: 'EU 36', selected: false ,onSelected: (value){}),
-                  CustomChoiceChip(text: 'EU 38', selected: false,onSelected: (value){} ),
+                  CustomChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {}),
+                  CustomChoiceChip(text: 'EU 36', selected: false, onSelected: (value) {}),
+                  CustomChoiceChip(text: 'EU 38', selected: false, onSelected: (value) {}),
                 ],
               ),
-
             ],
           ),
-          const SizedBox(height: Sizes.spaceBtwItems,),
-          /// Checkout buttons
-          SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child:const  Text('Checkout')),),
-          /// Description
-          SectionHeadingWidget(title: 'Description', onPressed: (){}),
-          const SizedBox(height: Sizes.spaceBtwItems,),
+          const SizedBox(height: Sizes.spaceBtwItems),
+          // Checkout Button
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text('Checkout'),
+            ),
+          ),
+          /// Description Section
+          SectionHeadingWidget(title: 'Description', onPressed: () {}),
+          const SizedBox(height: Sizes.spaceBtwItems),
           const ReadMoreText(
             'This is the product description for pink nike shoes .There are more things that can be added but Nowadays they are not available',
             trimCollapsedText: 'Show more',
             trimLines: 2,
             trimMode: TrimMode.Line,
             trimExpandedText: 'Less',
-            moreStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
-            lessStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+            moreStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
+            lessStyle: TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
           ),
-          /// Reviews
+          // Reviews Section
           const Divider(),
-          const SizedBox(height: Sizes.spaceBtwItems,),
+          const SizedBox(height: Sizes.spaceBtwItems),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SectionHeadingWidget(title: 'Reviews(199)', onPressed: (){},showActionButton: false,),
-              IconButton(onPressed: (){}, icon:const  Icon(Iconsax.arrow_right_3,size: 18,))
+              SectionHeadingWidget(title: 'Reviews(199)', onPressed: () {}, showActionButton: false),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Iconsax.arrow_right_3, size: 18),
+              ),
             ],
           ),
-          const SizedBox(height: Sizes.spaceBtwItems,),
+          const SizedBox(height: Sizes.spaceBtwItems),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: Sizes.defaultSpace,vertical: Sizes.defaultSpace /2),
+            padding: EdgeInsets.symmetric(
+              horizontal: Sizes.defaultSpace,
+              vertical: Sizes.defaultSpace / 2,
+            ),
             decoration: BoxDecoration(
               color: themeController.isDarkTheme.value ? AppColor.darkerGrey : AppColor.light,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(Sizes.cardRadiusLg),
                 topRight: Radius.circular(Sizes.cardRadiusLg),
-              )
+              ),
             ),
-            child: Row(
+            child: Column(
               children: [
+                Row(
+                  children: [
+                    // Minus Icon Button
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        shape: BoxShape.circle,
+                      ),
+                      width: 40,
+                      height: 40,
+                      child: Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Text('2'),
+                    SizedBox(width: 10),
+                    // Plus Icon Button
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        shape: BoxShape.circle,
+                      ),
+                      width: 40,
+                      height: 40,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Add to Cart action
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.all(10),
+                        backgroundColor: Colors.black,
+                        side: BorderSide(color: Colors.black),
+                      ),
+                      child: Text('Add to Cart'),
+                    ),
+                  ],
+                ),
+
 
               ],
             ),
-          )
+          ),
         ],
-      );
+      ),
+    );
   }
 }
