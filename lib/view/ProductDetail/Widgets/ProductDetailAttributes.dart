@@ -96,10 +96,21 @@ class ProductDetailAttributes extends StatelessWidget {
         Column(
           children: [
            SectionHeadingWidget(title: 'Colors', onPressed: (){}),
-            SizedBox(height: Sizes.spaceBtwItems / 2,),
-            CustomChoiceChip(text: 'Green', selected: true )
+            const  SizedBox(height: Sizes.spaceBtwItems / 2,),
+           const  CustomChoiceChip(text: 'Green', selected: true ),
+            const  CustomChoiceChip(text: 'Blue', selected: false ),
+            const  CustomChoiceChip(text: 'Yellow', selected: false ),
           ],
-        )
+        ),
+        Column(
+          children: [
+            SectionHeadingWidget(title: 'Size', onPressed: (){}),
+            const  SizedBox(height: Sizes.spaceBtwItems / 2,),
+            const  CustomChoiceChip(text: 'EU 34', selected: true ),
+            const  CustomChoiceChip(text: 'EU 36', selected: false ),
+            const  CustomChoiceChip(text: 'EU 38', selected: false ),
+          ],
+        ),
       ],
     );
   }
