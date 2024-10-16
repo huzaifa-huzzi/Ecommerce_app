@@ -3,6 +3,7 @@ import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view/ProductDetail/ProductReview.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -261,7 +262,7 @@ class _ProductDetailAttributesState extends State<ProductDetailAttributes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SectionHeadingWidget(title: 'Reviews(199)', onPressed: () {}, showActionButton: false),
+              SectionHeadingWidget(title: 'Reviews(199)', onPressed: () => Get.to(() =>const  ProductReview()), showActionButton: false),
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Iconsax.arrow_right_3, size: 18),
@@ -315,7 +316,7 @@ class _ProductDetailAttributesState extends State<ProductDetailAttributes> {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(width: 20),
+                    const SizedBox(width: Sizes.spaceBtwItems),
                     ElevatedButton(
                       onPressed: () {
                         // Add to Cart action

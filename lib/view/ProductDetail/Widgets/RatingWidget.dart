@@ -30,7 +30,7 @@ class RatingWidget extends StatelessWidget {
           ],
         ),
         /// Share Button
-        const SizedBox(width: Sizes.spaceBtwItems * 13,),
+        const SizedBox(width: Sizes.spaceBtwSections * 5,),
         IconButton(onPressed: (){}, icon:const  Icon(Icons.share,size: Sizes.iconMd,))
       ],
     );
