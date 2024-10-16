@@ -11,15 +11,22 @@ import 'package:readmore/readmore.dart';
 
 import '../../../utils/constants/Sizes.dart';
 
-class ProductDetailAttributes extends StatelessWidget {
+class ProductDetailAttributes extends StatefulWidget {
   const ProductDetailAttributes({super.key});
+
+  @override
+  _ProductDetailAttributesState createState() => _ProductDetailAttributesState();
+}
+
+class _ProductDetailAttributesState extends State<ProductDetailAttributes> {
+  String selectedColor = ''; // Store the selected color
 
   @override
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.put(ThemeController());
 
     return SingleChildScrollView(
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0), // Optional padding for better spacing
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,14 +35,14 @@ class ProductDetailAttributes extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12.0),
             decoration: BoxDecoration(
-              color: Colors.grey[200], // Background color
-              borderRadius: BorderRadius.circular(10), // Rounded corners
+              color: themeController.isDarkTheme.value ? AppColor.darkerGrey : Colors.grey[200],
+              borderRadius: BorderRadius.circular(10),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.1), // Shadow color
+                  color: Colors.black.withOpacity(0.1),
                   spreadRadius: 2,
                   blurRadius: 5,
-                  offset: const Offset(0, 2), // Shadow position
+                  offset: const Offset(0, 2),
                 ),
               ],
             ),
@@ -56,7 +63,6 @@ class ProductDetailAttributes extends StatelessWidget {
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
                     const SizedBox(width: Sizes.spaceBtwItems),
-                    // Original Price
                     Text(
                       '\$25',
                       style: Theme.of(context)
@@ -65,7 +71,6 @@ class ProductDetailAttributes extends StatelessWidget {
                           .copyWith(decoration: TextDecoration.lineThrough),
                     ),
                     const SizedBox(width: Sizes.spaceBtwItems),
-                    // Sale Price
                     const ProductPriceText(price: '20'),
                   ],
                 ),
@@ -85,10 +90,8 @@ class ProductDetailAttributes extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: Sizes.spaceBtwItems),
-                // Product Description (limited to 4 lines)
                 const ProductTitleText(
-                  title:
-                  'This is the Description of the product and it can go up to max 4 lines.',
+                  title: 'This is the Description of the product and it can go up to max 4 lines.',
                   smallSize: true,
                   maxLines: 4,
                 ),
@@ -96,32 +99,141 @@ class ProductDetailAttributes extends StatelessWidget {
             ),
           ),
           /// Attributes Section
+          const SizedBox(height: Sizes.spaceBtwItems),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SectionHeadingWidget(title: 'Colors', onPressed: () {}, showActionButton: false),
               const SizedBox(height: Sizes.spaceBtwItems / 2),
+              // Circular color options with a checkmark for the selected color
               Wrap(
                 spacing: 8,
                 children: [
-                  CustomChoiceChip(text: 'Green', selected: true, onSelected: (value) {}),
-                  CustomChoiceChip(text: 'Blue', selected: false, onSelected: (value) {}),
-                  CustomChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {}),
+                  // Green color option (with tick mark if selected)
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedColor = 'green';
+                      });
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        if (selectedColor == 'green')
+                          const Icon(
+                            Icons.check,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                      ],
+                    ),
+                  ),
+                  // Blue color option (with tick mark if selected)
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedColor = 'blue';
+                      });
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: Colors.blue,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        if (selectedColor == 'blue')
+                          const Icon(
+                            Icons.check,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                      ],
+                    ),
+                  ),
+                  // Yellow color option (with tick mark if selected)
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedColor = 'yellow';
+                      });
+                    },
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: Colors.yellow,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        if (selectedColor == 'yellow')
+                          const Icon(
+                            Icons.check,
+                            color: Colors.white,
+                            size: 24,
+                          ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: Sizes.spaceBtwItems),
               SectionHeadingWidget(title: 'Size', onPressed: () {}),
               const SizedBox(height: Sizes.spaceBtwItems / 2),
               Wrap(
-                spacing: 2,
+                spacing: 8,
                 children: [
-                  CustomChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {}),
-                  CustomChoiceChip(text: 'EU 36', selected: false, onSelected: (value) {}),
-                  CustomChoiceChip(text: 'EU 38', selected: false, onSelected: (value) {}),
+                  CustomChoiceChip(
+                    text: 'EU 34',
+                    selected: true, // You can control this with state
+                    onSelected: (value) {
+                      setState(() {
+                        // Update the selected state
+                      });
+                    },
+                    color: Colors.blue,
+                  ),
+                  CustomChoiceChip(
+                    text: 'EU 36',
+                    selected: false,
+                    onSelected: (value) {
+                      setState(() {
+                        // Update the selected state
+                      });
+                    },
+                    color: Colors.blue,
+                  ),
+                  CustomChoiceChip(
+                    text: 'EU 38',
+                    selected: false,
+                    onSelected: (value) {
+                      setState(() {
+                        // Update the selected state
+                      });
+                    },
+                    color: Colors.blue,
+                  ),
                 ],
               ),
+
             ],
           ),
+
           const SizedBox(height: Sizes.spaceBtwItems),
           // Checkout Button
           SizedBox(
@@ -135,7 +247,7 @@ class ProductDetailAttributes extends StatelessWidget {
           SectionHeadingWidget(title: 'Description', onPressed: () {}),
           const SizedBox(height: Sizes.spaceBtwItems),
           const ReadMoreText(
-            'This is the product description for pink nike shoes .There are more things that can be added but Nowadays they are not available',
+            'This is the product description for pink nike shoes. There are more things that can be added but Nowadays they are not available',
             trimCollapsedText: 'Show more',
             trimLines: 2,
             trimMode: TrimMode.Line,
@@ -158,66 +270,68 @@ class ProductDetailAttributes extends StatelessWidget {
           ),
           const SizedBox(height: Sizes.spaceBtwItems),
           Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: Sizes.defaultSpace,
               vertical: Sizes.defaultSpace / 2,
             ),
             decoration: BoxDecoration(
               color: themeController.isDarkTheme.value ? AppColor.darkerGrey : AppColor.light,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(Sizes.cardRadiusLg),
                 topRight: Radius.circular(Sizes.cardRadiusLg),
+                bottomRight: Radius.circular(Sizes.cardRadiusLg),
+                bottomLeft: Radius.circular(Sizes.cardRadiusLg),
               ),
             ),
             child: Column(
               children: [
                 Row(
                   children: [
-                    // Minus Icon Button
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.grey,
                         shape: BoxShape.circle,
                       ),
                       width: 40,
                       height: 40,
-                      child: Icon(
+                      child: const Icon(
                         Icons.remove,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(width: 10),
-                    Text('2'),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
+                    const Text('2'),
+                    const SizedBox(width: 10),
                     // Plus Icon Button
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.black,
                         shape: BoxShape.circle,
                       ),
                       width: 40,
                       height: 40,
-                      child: Icon(
+                      child: const Icon(
                         Icons.add,
                         color: Colors.white,
                       ),
                     ),
-                    SizedBox(width: 20),
+                    const SizedBox(width: 20),
                     ElevatedButton(
                       onPressed: () {
                         // Add to Cart action
                       },
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         backgroundColor: Colors.black,
-                        side: BorderSide(color: Colors.black),
+                        side: const BorderSide(color: Colors.black),
                       ),
-                      child: Text('Add to Cart'),
+                      child: const Text(
+                        'Add To Cart',
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
-
-
               ],
             ),
           ),

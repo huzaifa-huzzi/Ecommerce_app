@@ -1,37 +1,32 @@
-import 'package:ecommerece_app/Resources/Components/RoundedContainer/RoundedContainer.dat.dart';
-import 'package:ecommerece_app/utils/HelperFunction/HelperFunction.dart';
 import 'package:flutter/material.dart';
 
-class CustomChoiceChip extends StatelessWidget {  // Renamed to avoid conflict
-  const CustomChoiceChip({
-    super.key,
-    required this.text,
-    required this.selected,
-    this.onSelected,
-  });
-
+class CustomChoiceChip extends StatelessWidget {
   final String text;
   final bool selected;
-  final void Function(bool)? onSelected;
+  final Function(bool) onSelected;
+  final Color color;
+
+  const CustomChoiceChip({
+    Key? key,
+    required this.text,
+    required this.selected,
+    required this.onSelected,
+    required this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
-      child: ChoiceChip(
-        label:HelperFunction.getColor(text) != null ? const SizedBox() : const  Text(
-          '',
+    return ChoiceChip(
+      label: Text(
+        text,
+        style: TextStyle(
+          color: selected ? Colors.white : Colors.black,
         ),
-        selected: selected,
-        onSelected: onSelected,
-        labelStyle: TextStyle(color: selected ? Colors.white : null),
-        avatar: HelperFunction.getColor(text) != null ?  RoundedContainer(width: 50,height: 50,backgroundColor:  HelperFunction.getColor(text) !,) : null ,
-         shape:HelperFunction.getColor(text) !=null ? const CircleBorder() : null,
-        backgroundColor:HelperFunction.getColor(text) !=null ? Colors.green : null,
-        labelPadding:HelperFunction.getColor(text) != null ?  EdgeInsets.all(0) : null,
-        padding:HelperFunction.getColor(text) != null ? EdgeInsets.all(0) : null,
-        selectedColor:Colors.green ,
       ),
+      selected: selected,
+      onSelected: onSelected,
+      selectedColor: color,
+      backgroundColor: Colors.grey[300],
     );
   }
 }
