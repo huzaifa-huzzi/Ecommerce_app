@@ -3,8 +3,12 @@ import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.
 import 'package:ecommerece_app/Resources/Components/customAppbar/CustomAppBar.dart';
 import 'package:ecommerece_app/utils/Devics/DeviceUtils.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view/ProductDetail/Widgets/RatingIndicator.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/RatingProgressIndicator.dart';
+import 'package:ecommerece_app/view/ProductDetail/Widgets/UserReviewCard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:iconsax/iconsax.dart';
 
 import '../../utils/constants/sizes.dart';
 
@@ -35,7 +39,13 @@ class _ProductReviewState extends State<ProductReview> {
                const Text('Ratings and reveiws are verified and are from people who use the same type of devices that you use.'),
               const SizedBox( height:  Sizes.spaceBtwItems,),
                /// overall product Ratings
-              RatingProgressIndicator()
+              RatingProgressIndicator(),
+              RatingBarWidget(),
+              Text('12,611',style: Theme.of(context).textTheme.bodySmall,),
+              SizedBox(height: Sizes.spaceBtwItems,),
+
+               /// User Review List
+              UserReviewCard(),
             ],
           ),
         ),
@@ -43,6 +53,3 @@ class _ProductReviewState extends State<ProductReview> {
     );
   }
 }
-
-
-
