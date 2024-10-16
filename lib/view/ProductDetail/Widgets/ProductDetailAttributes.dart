@@ -262,9 +262,9 @@ class _ProductDetailAttributesState extends State<ProductDetailAttributes> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SectionHeadingWidget(title: 'Reviews(199)', onPressed: () => Get.to(() =>const  ProductReview()), showActionButton: false),
+              SectionHeadingWidget(title: 'Reviews(199)', onPressed: (){}, showActionButton: false),
               IconButton(
-                onPressed: () {},
+                onPressed:  () => Get.to(() =>const  ProductReview()),
                 icon: const Icon(Iconsax.arrow_right_3, size: 18),
               ),
             ],

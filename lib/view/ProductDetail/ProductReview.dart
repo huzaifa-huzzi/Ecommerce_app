@@ -1,4 +1,9 @@
 import 'package:ecommerece_app/Resources/Components/DynamicAppBAr/DynamicAppBar.dart';
+import 'package:ecommerece_app/Resources/Components/HomeAppBar/HomeAppBarWidget.dart';
+import 'package:ecommerece_app/Resources/Components/customAppbar/CustomAppBar.dart';
+import 'package:ecommerece_app/utils/Devics/DeviceUtils.dart';
+import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view/ProductDetail/Widgets/RatingProgressIndicator.dart';
 import 'package:flutter/material.dart';
 
 import '../../utils/constants/sizes.dart';
@@ -17,7 +22,9 @@ class _ProductReviewState extends State<ProductReview> {
   Widget build(BuildContext context) {
     return Scaffold(
        /// -- Appbar
-      appBar: const DynamicAppBar(title: 'Reviews & Ratings', subtitle: ''),
+      appBar:  AppBar(
+        title: Text('Reviews & Ratings', style: Theme.of(context).textTheme.headlineMedium,),
+      ),
       /// body
       body: SingleChildScrollView(
         child: Padding(
@@ -28,11 +35,7 @@ class _ProductReviewState extends State<ProductReview> {
                const Text('Ratings and reveiws are verified and are from people who use the same type of devices that you use.'),
               const SizedBox( height:  Sizes.spaceBtwItems,),
                /// overall product Ratings
-              Row(
-                children: [
-                  Text('4.8',style: Theme.of(context).textTheme.displayLarge,)
-                ],
-              )
+              RatingProgressIndicator()
             ],
           ),
         ),
@@ -40,3 +43,6 @@ class _ProductReviewState extends State<ProductReview> {
     );
   }
 }
+
+
+
