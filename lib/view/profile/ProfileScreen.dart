@@ -2,6 +2,7 @@ import 'package:ecommerece_app/Resources/Components/circularContainer/CircularCo
 import 'package:ecommerece_app/Resources/Components/curvedEdges.dart/curevedEdges.dart';
 import 'package:ecommerece_app/Resources/Components/settingMenuTile/SettingMenuTileComponent.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view/Adresses/address.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileAppBarWidgetSetting.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileNameAndImage.dart';
 import 'package:ecommerece_app/view/profile/widget/settingMenuTile.dart';
@@ -83,47 +84,49 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                         child: Column(
                           children: [
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.safe_home,
                               title: "My Addresses",
                               subtitle: "Set Shopping delivery Access",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios),
+                              ontap: ()  => Get.to(() =>const UserAddress()),
+
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.shopping_cart,
                               title: "My Cart",
                               subtitle: "Add, Remove Products and move to checkout",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.bag_tick,
                               title: "My Orders",
                               subtitle: "In-Progress and completed orders",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.bank,
                               title: "Bank Account",
                               subtitle: "Withdraw balance to registered bank accounts",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.discount_shape,
                               title: "My Coupons",
                               subtitle: "List of all discounted coupons",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.notification,
                               title: "Notifications",
                               subtitle: "Set notification preferences",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.security_card,
                               title: "Account Privacy",
                               subtitle: "Manage your profile and preferences",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
                             /// -- AppSettings
                             const SizedBox(height: Sizes.spaceBtwSections,),
@@ -134,11 +137,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   ? Colors.white
                                   : Colors.black, // Adjust section heading color
                             ),
-                            const SettingMenuTileComponent(
+                            SettingMenuTileComponent(
                               icon: Iconsax.document_upload,
                               title: "Load Data",
                               subtitle: "Upload Data to your Cloud Firebase",
-                              trailing: Icon(Icons.arrow_forward_ios),
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
                             ),
                             SettingMenuTileComponent(
                               icon: Iconsax.location,
@@ -150,7 +153,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 activeColor: themeController.isDarkTheme.value
                                     ? Colors.white
                                     : AppColor.primary,  // Adjust switch color
-                              ),
+                              ), ontap: () {  },
                             ),
                             SettingMenuTileComponent(
                               icon: Iconsax.security_user,
@@ -162,7 +165,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 activeColor: themeController.isDarkTheme.value
                                     ? Colors.white
                                     : AppColor.primary,  // Adjust switch color
-                              ),
+                              ), ontap: () {  },
                             ),
                             SettingMenuTileComponent(
                               icon: Iconsax.document_upload,
@@ -174,7 +177,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 activeColor: themeController.isDarkTheme.value
                                     ? Colors.white
                                     : AppColor.primary,  // Adjust switch color
-                              ),
+                              ), ontap: () {  },
                             ),
 
                             // Add more SettingMenuTileComponent instances as needed
