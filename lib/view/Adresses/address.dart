@@ -19,14 +19,14 @@ class _UserAddressState extends State<UserAddress> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-            onPressed: () => Get.to(() =>const  AddNewAdress(),),
+            onPressed: () => Get.to(() =>const  AddNewAddress(),),
             backgroundColor: AppColor.primary,
-            child: Icon(Iconsax.add,color: AppColor.textWhite,),
+            child: const Icon(Iconsax.add,color: AppColor.textWhite,),
         ),
       appBar: AppBar(
         title: Text('Addresses',style: Theme.of(context).textTheme.headlineSmall,),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Padding(
             padding: EdgeInsets.all(Sizes.defaultSpace),
              child: Column(
