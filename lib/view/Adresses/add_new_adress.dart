@@ -11,6 +11,13 @@ class AddNewAdress extends StatefulWidget {
 class _AddNewAdressState extends State<AddNewAdress> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title:const Text('Add New Adress'),
+      ),
+      body: SingleChildScrollView(
+
+      ),
+    );
   }
 }
