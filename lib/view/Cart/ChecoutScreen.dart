@@ -1,6 +1,8 @@
-import 'package:ecommerece_app/Resources/Components/RoundedContainer/RoundedContainer.dat.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
+import 'package:ecommerece_app/view/Cart/Widgets/Billing%20Widgets/Billing_adres_Sections.dart';
+import 'package:ecommerece_app/view/Cart/Widgets/Billing%20Widgets/billing_Payment_sections.dart';
 import 'package:ecommerece_app/view/Cart/Widgets/CartIteWidget.dart';
+import 'package:ecommerece_app/view/Cart/Widgets/CouponCode.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -33,22 +35,63 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpace),
+          padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
               /// Items in cart
               CartItemWidget(),
-              SizedBox(height: Sizes.spaceBtwSections),
+              const SizedBox(height: Sizes.spaceBtwSections),
 
               /// -- Coupon TextField with rounded container
               CouponCode(themeController: themeController),
-              SizedBox(height: Sizes.spaceBtwSections),
+              const SizedBox(height: Sizes.spaceBtwSections),
 
+              /// -- Billing Sections
+               const SizedBox(height: Sizes.spaceBtwSections),
+              Container(
+                height: 400,
+                padding: const EdgeInsets.all(20),  // Added padding for a clean look
+                margin: const EdgeInsets.symmetric(vertical: 10.0),  // Adds vertical spacing outside the container
+                decoration: BoxDecoration(
+                  color: themeController.isDarkTheme.value
+                      ? AppColor.dark
+                      : Colors.white,
+                  borderRadius: BorderRadius.circular(15),  // Rounded corners
+                  boxShadow: [
+                    const BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 10.0,  // Soft shadow
+                      spreadRadius: 1.0,
+                      offset: Offset(0, 5),  // Slight shadow below
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    /// Pricing Section
+                    const BillingPAymentSections(),
+                    const SizedBox(height: Sizes.spaceBtwSections),
+
+                    /// Divider
+                    Divider(
+                      color: themeController.isDarkTheme.value
+                          ? Colors.white
+                          : AppColor.dark,
+                      thickness: 2,  // Thicker divider for better separation
+                    ),
+                    const SizedBox(height: Sizes.spaceBtwItems),
+
+                    /// Payment Section (e.g. Billing Address)
+                    const BillingAdressSections(),
+                    const SizedBox(height: Sizes.spaceBtwItems),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
-    );
+          );
   }
 }
 

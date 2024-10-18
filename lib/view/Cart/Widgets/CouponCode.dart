@@ -39,7 +39,7 @@ class CouponCode extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: Sizes.defaultSpace),
+          const SizedBox(width: Sizes.defaultSpace),
 
           /// Apply Button with rounded corners
           ElevatedButton(
