@@ -22,8 +22,8 @@ class BillingAdressSections extends StatelessWidget {
           children: [
             Container(
               constraints: const BoxConstraints(
-                maxWidth: 60,  // Set a maximum width if needed
-                maxHeight: 40,  // Set a maximum height if needed
+                maxWidth: 60,
+                maxHeight: 40,
               ),
               decoration: BoxDecoration(
                 color: themeController.isDarkTheme.value ? AppColor.light : Colors.white,
