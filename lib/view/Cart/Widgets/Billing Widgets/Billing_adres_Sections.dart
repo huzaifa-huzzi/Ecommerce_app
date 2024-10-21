@@ -44,9 +44,17 @@ class BillingAdressSections extends StatelessWidget {
 
           ],
         ),
-        SectionHeadingWidget(title: 'Payment Method', onPressed: (){},buttonTitle: 'Change',),
+        SectionHeadingWidget(title: 'Shipping Method', onPressed: (){},buttonTitle: 'Change',),
         const SizedBox( height: Sizes.spaceBtwItems /2,),
-        Text('Huzaifa khan',style: Theme.of(context).textTheme.bodyLarge,),
+        Row(
+          children: [
+            const Icon(Icons.person,color: Colors.grey,size: 16,),
+            const SizedBox(width: Sizes.spaceBtwItems,),
+            Text('Huzaifa khan',style: Theme.of(context).textTheme.bodyLarge,),
+
+          ],
+        ),
+        const SizedBox( height: Sizes.spaceBtwItems /2,),
         Row(
           children: [
             const Icon(Icons.phone,color: Colors.grey,size: 16,),
@@ -55,13 +63,13 @@ class BillingAdressSections extends StatelessWidget {
           ],
         ),
         const SizedBox( height: Sizes.spaceBtwItems /2,),
-        Row(
-          children: [
-            const Icon(Icons.location_history,color: Colors.grey,size: 16,),
-            const SizedBox(width: Sizes.spaceBtwItems,),
-            Text('Ghazipur colony ,main road ',style: Theme.of(context).textTheme.bodyMedium,)
-          ],
-        ),
+            Row(
+              children: [
+                const Icon(Icons.location_history,color: Colors.grey,size: 16,),
+                const SizedBox(width: Sizes.spaceBtwItems,),
+                Text('Ghazipur colony ,main road ',style: Theme.of(context).textTheme.bodyMedium,)
+              ],
+            ),
       ],
     );
   }

@@ -4,6 +4,7 @@ import 'package:ecommerece_app/Resources/ProductPrice/ProductPriceText.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/text/ProductTitleText.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
+import 'package:ecommerece_app/view/Cart/ChecoutScreen.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ImageSliderOfProductWidget.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/MainLargeImage.dart';
 import 'package:ecommerece_app/view/ProductDetail/Widgets/ProductAppBarWidget.dart';
@@ -118,7 +119,7 @@ class _ProductDetailState extends State<ProductDetail> {
                      ],
                    ),
                    ///  - Attribution
-                     const ProductDetailAttributes()
+                     const ProductDetailAttributes(),
                    ///  CheckOut Button
                    ///  Description
                    ///  Reviews

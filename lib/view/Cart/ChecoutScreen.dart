@@ -51,7 +51,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               /// -- Billing Sections
                const SizedBox(height: Sizes.spaceBtwSections),
               Container(
-                height: 400,
+                height: MediaQuery.of(context).size.height * .6,
                 padding: const EdgeInsets.all(20),  // Added padding for a clean look
                 margin: const EdgeInsets.symmetric(vertical: 10.0),  // Adds vertical spacing outside the container
                 decoration: BoxDecoration(
