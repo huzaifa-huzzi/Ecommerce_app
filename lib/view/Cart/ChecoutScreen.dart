@@ -95,13 +95,22 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       ),
 
 
-         /// checkout screen
-               bottomNavigationBar: Padding(
-                   padding:const  EdgeInsets.all(Sizes.defaultSpace),
-                 child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: 'assets/icons/payment icon.png', title: 'Payment Successful', subtitle: ' Your item will be shipped soon!', onTap:() => const  DashboardScreen())), child:const  Text(' Checkout \$256.0')),
-
-               ),
-          );
+      /// Checkout screen
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(Sizes.defaultSpace),
+        child: ElevatedButton(
+          onPressed: () => Get.to(
+                () => SuccessScreen(
+              image: 'assets/icons/payment icon.png',
+              title: 'Payment Successful',
+              subtitle: 'Your item will be shipped soon!',
+              onTap: () => Get.offAll(() => DashboardScreen()),
+            ),
+          ),
+          child: const Text('Proceed to Success'),
+        ),
+      ),
+    );
   }
 }
 
