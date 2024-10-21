@@ -49,16 +49,16 @@ class BillingAdressSections extends StatelessWidget {
         Text('Huzaifa khan',style: Theme.of(context).textTheme.bodyLarge,),
         Row(
           children: [
-            Icon(Icons.phone,color: Colors.grey,size: 16,),
-            SizedBox(width: Sizes.spaceBtwItems,),
+            const Icon(Icons.phone,color: Colors.grey,size: 16,),
+            const SizedBox(width: Sizes.spaceBtwItems,),
             Text('+92 3315178220',style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),
         const SizedBox( height: Sizes.spaceBtwItems /2,),
         Row(
           children: [
-            Icon(Icons.location_history,color: Colors.grey,size: 16,),
-            SizedBox(width: Sizes.spaceBtwItems,),
+            const Icon(Icons.location_history,color: Colors.grey,size: 16,),
+            const SizedBox(width: Sizes.spaceBtwItems,),
             Text('Ghazipur colony ,main road ',style: Theme.of(context).textTheme.bodyMedium,)
           ],
         ),

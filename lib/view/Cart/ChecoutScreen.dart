@@ -1,8 +1,10 @@
+import 'package:ecommerece_app/Resources/Components/successScreen/SuccessScreen.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/view/Cart/Widgets/Billing%20Widgets/Billing_adres_Sections.dart';
 import 'package:ecommerece_app/view/Cart/Widgets/Billing%20Widgets/billing_Payment_sections.dart';
 import 'package:ecommerece_app/view/Cart/Widgets/CartIteWidget.dart';
 import 'package:ecommerece_app/view/Cart/Widgets/CouponCode.dart';
+import 'package:ecommerece_app/view/DashBoard%20screen/DashBoardScreen.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -91,6 +93,14 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           ),
         ),
       ),
+
+
+         /// checkout screen
+               bottomNavigationBar: Padding(
+                   padding:const  EdgeInsets.all(Sizes.defaultSpace),
+                 child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(image: 'assets/icons/payment icon.png', title: 'Payment Successful', subtitle: ' Your item will be shipped soon!', onTap:() => const  DashboardScreen())), child:const  Text(' Checkout \$256.0')),
+
+               ),
           );
   }
 }
