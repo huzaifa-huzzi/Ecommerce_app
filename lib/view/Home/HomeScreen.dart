@@ -6,7 +6,9 @@ import 'package:ecommerece_app/Resources/common%20widgets/HomeSliderWidget.dart'
 import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/verticalImageWidget.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
+import 'package:ecommerece_app/view/SubCategory/SubCategoryScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../Resources/common widgets/searchBAr/HomeSearchBAr.dart';
 import '../../Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
@@ -82,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   return VerticalImageWidget(
                                     image: '', // Provide the image path here
                                     title: 'Shoes',
-                                    onPressed: () {},
+                                    onPressed: ()  => Get.to(() =>const  SubCategoryScreen() ),
                                   );
                                 },
                               ),
