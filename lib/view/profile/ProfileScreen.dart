@@ -4,6 +4,7 @@ import 'package:ecommerece_app/Resources/Components/settingMenuTile/SettingMenuT
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/view/Adresses/address.dart';
 import 'package:ecommerece_app/view/Cart/CartScreen.dart';
+import 'package:ecommerece_app/view/order%20screen/Order%20screen.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileAppBarWidgetSetting.dart';
 import 'package:ecommerece_app/view/profile/widget/ProfileNameAndImage.dart';
 import 'package:ecommerece_app/view/profile/widget/settingMenuTile.dart';
@@ -104,7 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               icon: Iconsax.bag_tick,
                               title: "My Orders",
                               subtitle: "In-Progress and completed orders",
-                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () {  },
+                              trailing: const Icon(Icons.arrow_forward_ios), ontap: () => Get.to(() =>const  OrderScreen()),
                             ),
                             SettingMenuTileComponent(
                               icon: Iconsax.bank,
