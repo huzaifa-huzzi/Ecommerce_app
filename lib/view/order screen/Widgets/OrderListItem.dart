@@ -5,7 +5,6 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/sizes.dart';
 
-
 class OrderListItem extends StatelessWidget {
   const OrderListItem({super.key});
 
@@ -13,108 +12,147 @@ class OrderListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.put(ThemeController());
 
-    return Container(
-      padding: const EdgeInsets.all(Sizes.md), // Adjust your padding here
-      decoration: BoxDecoration(
-        color: themeController.isDarkTheme.value ? Colors.black : Colors.white,
-        borderRadius: BorderRadius.circular(10), // Adjust border-radius if needed
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 5,
-            offset: const Offset(0, 3), // Changes position of shadow
-          ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Row(
-            children: [
-              // 1 - Icon
-              Icon(
-                Iconsax.ship, // Adjust your icon here
-                color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
-              ),
-              const  SizedBox(width: Sizes.spaceBtwItems / 2),
-
-              /// 2 - Status & Date
-              Expanded(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+    return Scaffold(
+      body: ListView.separated(
+        padding: const EdgeInsets.all(Sizes.md),
+        itemCount: 5, // We are displaying 5 items in the list
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
+        itemBuilder: (context, index) {
+          return Container(
+            padding: const EdgeInsets.all(Sizes.md),
+            decoration: BoxDecoration(
+              color: themeController.isDarkTheme.value
+                  ? Colors.black
+                  : Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // 1 - Processing status and date row
+                Row(
                   children: [
-                    // Status Text
-                    Text(
-                      'Processing',
-                      style: Theme.of(context).textTheme.bodyLarge?.apply(
-                          color: themeController.isDarkTheme.value
-                              ? Colors.lightBlue
-                              : Colors.blue,
-                          fontWeightDelta: 2),
+                    Icon(
+                      Iconsax.ship, // Adjust your icon here
+                      color: themeController.isDarkTheme.value
+                          ? Colors.white
+                          : Colors.black,
                     ),
-
-                    // Date Text
-                    Text(
-                      '07 Nov 2024',
-                      style: Theme.of(context).textTheme.headlineSmall,
+                    const SizedBox(width: Sizes.spaceBtwItems / 2),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Processing',
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge
+                              ?.apply(
+                              color: themeController.isDarkTheme.value
+                                  ? Colors.lightBlue
+                                  : Colors.blue,
+                              fontWeightDelta: 2),
+                        ),
+                        Text(
+                          '07 Nov 2024',
+                          style: Theme.of(context).textTheme.headlineSmall,
+                        ),
+                      ],
+                    ),
+                    const Spacer(),
+                    Icon(
+                      Iconsax.arrow_right_3, // Adjust your icon here
+                      color: themeController.isDarkTheme.value
+                          ? Colors.white
+                          : Colors.black,
                     ),
                   ],
                 ),
-              ),
-              const Spacer(), // Push the icon to the end
-            ],
-          ),
-              Row(
-                children: [
-                  Row(
-                    children: [
-                      // 1 - Icon
-                      Icon(
-                        Iconsax.ship, // Adjust your icon here
-                        color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
-                      ),
-                      const  SizedBox(width: Sizes.spaceBtwItems / 2),
+                const SizedBox(height: Sizes.spaceBtwItems * 2),
 
-                      /// 2 - Status & Date
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
+                // 2 - Order details and Shipping date
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Order Number
+                    Row(
+                      children: [
+                        Icon(
+                          Iconsax.location, // Adjust your icon here
+                          color: themeController.isDarkTheme.value
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                        const SizedBox(width: Sizes.spaceBtwItems / 2),
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Status Text
                             Text(
                               'Order',
-                              style: Theme.of(context).textTheme.labelMedium?.apply(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall
+                                  ?.apply(
                                   color: themeController.isDarkTheme.value
-                                      ? Colors.lightBlue
-                                      : Colors.blue,
-                                  fontWeightDelta: 2),
+                                      ? Colors.grey
+                                      : Colors.grey),
                             ),
-
-                            // Date Text
                             Text(
-                              '[#256f2]',
-                              style: Theme.of(context).textTheme.titleMedium,
+                              '[#256612]',
+                              style: Theme.of(context).textTheme.labelLarge,
                             ),
                           ],
                         ),
-                      ),
+                      ],
+                    ),
+                    const SizedBox(width: Sizes.spaceBtwItems),
 
-                    ],
-                  ),
-            ],
-          ),
-          /// 3 - Arrow Icon
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Iconsax.arrow_right_3),
-            iconSize: Sizes.iconSm,
-            color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
-          ),
-        ],
-      )
+                    // Shipping Date
+                    Row(
+                      children: [
+                        Icon(
+                          Iconsax.clock, // Adjust your icon here
+                          color: themeController.isDarkTheme.value
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                        const SizedBox(width: Sizes.spaceBtwItems / 2),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Shipping Date',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall
+                                  ?.apply(
+                                  color: themeController.isDarkTheme.value
+                                      ? Colors.grey
+                                      : Colors.grey),
+                            ),
+                            Text(
+                              '03 Feb 2025',
+                              style: Theme.of(context).textTheme.labelLarge,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );
+        },
+      ),
     );
   }
 }
