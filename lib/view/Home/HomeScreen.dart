@@ -7,6 +7,7 @@ import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/ve
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/view/SubCategory/SubCategoryScreen.dart';
+import 'package:ecommerece_app/view/View%20All%20Products/ViewAllProducts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -70,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             SectionHeadingWidget(
                               title: 'Popular Categories',
-                              onPressed: () {},
+                              onPressed: () => Get.to(() => const ViewAllProducts()),
                               showActionButton: false,
                               textColor: AppColor.textWhite,
                             ),
