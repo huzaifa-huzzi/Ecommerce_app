@@ -8,6 +8,7 @@ import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/view/SubCategory/SubCategoryScreen.dart';
 import 'package:ecommerece_app/view/View%20All%20Products/ViewAllProducts.dart';
+import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,6 +23,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  final ThemeController themeController = Get.put(ThemeController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             SectionHeadingWidget(
                               title: 'Popular Categories',
-                              onPressed: () => Get.to(() => const ViewAllProducts()),
+                              onPressed: () {},
                               showActionButton: false,
                               textColor: AppColor.textWhite,
                             ),
@@ -101,6 +105,16 @@ class _HomeScreenState extends State<HomeScreen> {
            const SizedBox(height: Sizes.defaultSpace,),
            /// body
           const HomeSliderWidget(),
+            const SizedBox(height: Sizes.spaceBtwSections),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: SectionHeadingWidget(
+                title: 'Popular Categories',
+                onPressed: () => Get.to(() => const  ViewAllProducts()),
+                showActionButton: true,
+                textColor: themeController.isDarkTheme.value ? Colors.white : AppColor.dark ,
+              ),
+            ),
             const SizedBox(height: Sizes.spaceBtwSections),
            GridView.builder(
               itemCount: 4,
