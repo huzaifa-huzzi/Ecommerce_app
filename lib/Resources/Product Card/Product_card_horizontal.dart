@@ -54,7 +54,7 @@ class ProductCardHorizontal extends StatelessWidget {
                                         'assets/banners/banner-3.png',
                                         width: 120,
                                         height: 120,
-                                        fit: BoxFit.cover,
+                                        fit: BoxFit.contain,
                                     ),
                                 ),
                                 // Sale Tag
