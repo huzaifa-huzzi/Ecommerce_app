@@ -1,4 +1,6 @@
 import 'package:ecommerece_app/Resources/Components/DynamicAppBAr/DynamicAppBar.dart';
+import 'package:ecommerece_app/Resources/Product%20Card/Product_card_horizontal.dart';
+import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:flutter/material.dart';
@@ -16,29 +18,23 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
-        title: Text('Shoes',style: Theme.of(context).textTheme.headlineMedium,),
+      appBar: AppBar(
+        title: Text(
+          'Shoes',
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.all(Sizes.defaultSpace),
+          padding: EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
-               /// Banner
+              /// Banner
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.3,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: Offset(0, 3),
-                    ),
-                  ],
-                ),
+                  borderRadius: BorderRadius.circular(15)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: Image.asset(
@@ -46,16 +42,26 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-              ),
+                ),
+              SizedBox(height: Sizes.spaceBtwSections),
 
-              SizedBox(height: Sizes.spaceBtwSections,),
-
-               /// sub-categories
+              /// Sub-categories
               Column(
                 children: [
-                   // headings
-                  SectionHeadingWidget(title: 'Nike Shoe', onPressed: (){}),
-                  SizedBox(height: Sizes.spaceBtwItems /2,),
+                  // Section Heading
+                  SectionHeadingWidget(title: 'Nike Shoe', onPressed: () {}),
+                  SizedBox(height: Sizes.spaceBtwItems / 2),
+
+                  /// Horizontal Product List
+                  SizedBox(
+                    height: 160, // Adjust the height based on the card height
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => ProductCardHorizontal(),
+                      separatorBuilder: (context, index) => SizedBox(width: 8),
+                      itemCount: 10,
+                    ),
+                  ),
                 ],
               )
             ],
