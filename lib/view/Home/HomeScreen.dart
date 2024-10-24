@@ -15,6 +15,8 @@ import 'package:get/get.dart';
 import '../../Resources/common widgets/searchBAr/HomeSearchBAr.dart';
 import '../../Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
 
+
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
