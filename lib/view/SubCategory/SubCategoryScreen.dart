@@ -10,7 +10,6 @@ import 'package:get/get.dart';
 
 
 
-
 class SubCategoryScreen extends StatefulWidget {
   const SubCategoryScreen({super.key});
 
