@@ -9,7 +9,7 @@ import '../../../utils/constants/sizes.dart';
 class CartItemWidget extends StatelessWidget {
   final ThemeController themeController = Get.put(ThemeController());
 
-  const CartItemWidget({super.key});
+   CartItemWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

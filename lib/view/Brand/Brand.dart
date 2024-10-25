@@ -1,3 +1,5 @@
+import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
+import 'package:ecommerece_app/Resources/common%20widgets/GridLayoutWidget/GridLayout.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
@@ -42,8 +44,24 @@ class _AllBrandScreenState extends State<AllBrandScreen> {
               const SizedBox(height: Sizes.spaceBtwItems,),
 
               /// -- Brands
-
-
+               GridLayout(itemCount: 10, itemBuilder: (context,index) => SizedBox(
+                 height: 300, // Adjust height based on design
+                 child: GridView.builder(
+                   padding: EdgeInsets.zero,
+                   itemCount: 4,
+                   shrinkWrap: true,
+                   physics: const NeverScrollableScrollPhysics(),
+                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                     crossAxisCount: 2,
+                     mainAxisSpacing: Sizes.gridViewSpacing,
+                     crossAxisSpacing: Sizes.gridViewSpacing,
+                     mainAxisExtent: 100,
+                   ),
+                   itemBuilder: (context, index) {
+                     return const GridingWithWidget();
+                   },
+                 ),
+               ), )
             ],
           ),
         ),

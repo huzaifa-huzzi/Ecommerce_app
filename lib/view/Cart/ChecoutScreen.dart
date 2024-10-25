@@ -41,7 +41,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: Column(
             children: [
               /// Items in cart
-              const CartItemWidget(),
+              CartItemWidget(),
               const SizedBox(height: Sizes.spaceBtwSections),
 
               /// -- Coupon TextField with rounded container

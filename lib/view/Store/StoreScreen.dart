@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/Resources/Components/DynamicAppBAr/DynamicAppBar.dart';
 import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/searchBAr/HomeSearchBAr.dart';
+import 'package:ecommerece_app/view/Brand/Brand.dart';
 import 'package:ecommerece_app/view/Store/Widgets/TabBarWidgets.dart';
 import 'package:ecommerece_app/view/Store/Widgets/categoryTabWidget.dart';
 import 'package:flutter/material.dart';
@@ -68,7 +69,7 @@ class _StoreScreenState extends State<StoreScreen> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () => Get.to(() => AllBrandScreen()),
                             child: Text('View All',
                                 style: TextStyle(color: appBarTextColor)),
                           ),
