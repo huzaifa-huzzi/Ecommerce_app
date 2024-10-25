@@ -12,5 +12,7 @@ class RouteName{
   static const String signupScreen = '/SignUpScreen';
   static const String emailVerification = '/EmailVerification';
   static const String forgotPassword = '/ForgotPassword';
+  static const String AllProductSrceen = '/ViewAllProducts';
+  static const String BrandingName = '/AllBrandScreen';
 
 }
