@@ -113,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SectionHeadingWidget(
                 title: 'Popular Categories',
                 onPressed: () {
-                  Get.to(ViewAllProducts());
+                  Get.to(const ViewAllProducts());
                 },
                 showActionButton: true,
                 textColor: themeController.isDarkTheme.value ? Colors.white : AppColor.dark ,

@@ -1,8 +1,6 @@
 import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
-import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
 import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
-import 'package:ecommerece_app/view/Store/Widgets/BrandShowCaseStoreWidget.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,6 +8,8 @@ import 'package:get/get.dart';
 import '../../../utils/constants/sizes.dart';
 
 class CategoryTabWidget extends StatelessWidget {
+  const CategoryTabWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     final ThemeController themeController = Get.put(ThemeController());
@@ -142,7 +142,7 @@ class CategoryTabWidget extends StatelessWidget {
             mainAxisExtent: 300, // Control the height of each grid item
           ),
           itemBuilder: (context, index) {
-            return ProductCardVertical(); // Placeholder for your actual product card widget
+            return const ProductCardVertical(); // Placeholder for your actual product card widget
           },
         ),
       ],

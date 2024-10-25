@@ -41,7 +41,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: Column(
             children: [
               /// Items in cart
-              CartItemWidget(),
+              const CartItemWidget(),
               const SizedBox(height: Sizes.spaceBtwSections),
 
               /// -- Coupon TextField with rounded container
@@ -59,8 +59,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                       ? AppColor.dark
                       : Colors.white,
                   borderRadius: BorderRadius.circular(15),  // Rounded corners
-                  boxShadow: [
-                    const BoxShadow(
+                  boxShadow: const [
+                    BoxShadow(
                       color: Colors.black12,
                       blurRadius: 10.0,  // Soft shadow
                       spreadRadius: 1.0,
@@ -104,7 +104,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
               image: 'assets/icons/payment icon.png',
               title: 'Payment Successful',
               subtitle: 'Your item will be shipped soon!',
-              onTap: () => Get.offAll(() => DashboardScreen()),
+              onTap: () => Get.offAll(() => const DashboardScreen()),
             ),
           ),
           child: const Text('Proceed to Success'),

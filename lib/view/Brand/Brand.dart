@@ -34,12 +34,12 @@ class _AllBrandScreenState extends State<AllBrandScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-            padding:  EdgeInsets.all(Sizes.defaultSpace),
+            padding:  const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
               /// Heading
               SectionHeadingWidget(title: 'Brands', onPressed: (){}),
-              SizedBox(height: Sizes.spaceBtwItems,),
+              const SizedBox(height: Sizes.spaceBtwItems,),
 
               /// -- Brands
 

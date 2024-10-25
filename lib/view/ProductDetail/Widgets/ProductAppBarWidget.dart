@@ -14,13 +14,13 @@ class ProductAppBarWidget extends StatelessWidget implements PreferredSizeWidget
   final Color? color;
 
   const ProductAppBarWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.isFavorite = false,
     required this.onFavoritePressed, // Function to handle favorite icon press
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

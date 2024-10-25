@@ -9,13 +9,13 @@ class ProfileAppBarScreenWidget extends StatelessWidget implements PreferredSize
   final Color? color;
 
   const ProfileAppBarScreenWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.cartItemCount = 0,
     this.color,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

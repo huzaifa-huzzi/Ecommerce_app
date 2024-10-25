@@ -11,13 +11,13 @@ class DynamicAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? color;
 
   const DynamicAppBar({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.cartItemCount = 0,
     this.color,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

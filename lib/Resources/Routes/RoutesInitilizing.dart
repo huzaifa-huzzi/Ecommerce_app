@@ -12,7 +12,7 @@ class AppRoutes{
 
   static appRoutes() => [
      //splashScreen
-    GetPage(name:RouteName.splashScreen , page: () =>  SplashScreen()),
+    GetPage(name:RouteName.splashScreen , page: () =>  const SplashScreen()),
     // Views
     GetPage(name:RouteName.onBoardingOne , page: () =>const   OnBoardingScreenOne()),
     GetPage(name:RouteName.dashBoardScreen , page: () =>const   DashboardScreen()),

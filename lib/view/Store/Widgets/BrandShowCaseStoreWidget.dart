@@ -1,6 +1,4 @@
-import 'package:ecommerece_app/Resources/Components/BrandName/BrandName.dart';
 import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
-import 'package:ecommerece_app/Resources/Components/RoundedContainer/RoundedContainer.dat.dart';
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +31,7 @@ class BrandShocaseStoreWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // Brand name with icon row (using the provided component)
-          GridingWithWidget(), // Directly using the existing component
+          const GridingWithWidget(), // Directly using the existing component
           const SizedBox(height: Sizes.defaultSpace),
 
           // Product count

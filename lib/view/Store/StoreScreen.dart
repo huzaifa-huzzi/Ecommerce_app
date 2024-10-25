@@ -10,7 +10,7 @@ import '../../view_model/Controller/ThemeController/ThemeController.dart';
 import '../../utils/constants/Sizes.dart';
 
 class StoreScreen extends StatefulWidget {
-  const StoreScreen({Key? key}) : super(key: key);
+  const StoreScreen({super.key});
 
   @override
   State<StoreScreen> createState() => _StoreScreenState();
@@ -97,14 +97,14 @@ class _StoreScreenState extends State<StoreScreen> {
                   ),
                 ),
               ),
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(60),
+              bottom: const PreferredSize(
+                preferredSize: Size.fromHeight(60),
                 // Adjust size to add some space
                 child: TabBarStoreWidget(), // This now works correctly
               ),
             ),
           ],
-          body: TabBarView(
+          body: const TabBarView(
             children: [
               CategoryTabWidget(),
               CategoryTabWidget(),

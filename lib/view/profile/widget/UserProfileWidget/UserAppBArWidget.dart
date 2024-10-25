@@ -7,10 +7,10 @@ class UserappBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String subtitle;
 
   const UserappBarWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

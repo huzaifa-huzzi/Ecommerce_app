@@ -40,7 +40,7 @@ class ImageSliderOfProductDetail extends StatelessWidget {
             ),
           ),
           separatorBuilder: (_, __) =>
-          SizedBox(width: Sizes.spaceBtwItems),
+          const SizedBox(width: Sizes.spaceBtwItems),
           itemCount: 4,
         ),
       ),

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme:TAppTheme.lightTheme ,
       darkTheme: TAppTheme.dartTheme,
-      home: SplashScreen(),
+      home: const SplashScreen(),
       getPages: AppRoutes.appRoutes(),
     );
   }

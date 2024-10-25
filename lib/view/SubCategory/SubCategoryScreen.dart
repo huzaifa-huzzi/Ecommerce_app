@@ -1,6 +1,4 @@
-import 'package:ecommerece_app/Resources/Components/DynamicAppBAr/DynamicAppBar.dart';
 import 'package:ecommerece_app/Resources/Product%20Card/Product_card_horizontal.dart';
-import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
@@ -37,7 +35,7 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(Sizes.defaultSpace),
+          padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
               /// Banner
@@ -54,22 +52,22 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
                   ),
                 ),
                 ),
-              SizedBox(height: Sizes.spaceBtwSections),
+              const SizedBox(height: Sizes.spaceBtwSections),
 
               /// Sub-categories
               Column(
                 children: [
                   // Section Heading
                   SectionHeadingWidget(title: 'Nike Shoe', onPressed: () {}),
-                  SizedBox(height: Sizes.spaceBtwItems / 2),
+                  const SizedBox(height: Sizes.spaceBtwItems / 2),
 
                   /// Horizontal Product List
                   SizedBox(
                     height: 160, // Adjust the height based on the card height
                     child: ListView.separated(
                       scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) => ProductCardHorizontal(),
-                      separatorBuilder: (context, index) => SizedBox(width: 8),
+                      itemBuilder: (context, index) => const ProductCardHorizontal(),
+                      separatorBuilder: (context, index) => const SizedBox(width: 8),
                       itemCount: 10,
                     ),
                   ),

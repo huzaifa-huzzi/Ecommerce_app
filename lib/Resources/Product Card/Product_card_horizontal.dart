@@ -5,12 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../utils/constants/sizes.dart';
-import '../common widgets/text/ProductTitleText.dart';
 
 
 class ProductCardHorizontal extends StatelessWidget {
-    const ProductCardHorizontal({Key? key}) : super(key: key);
+    const ProductCardHorizontal({super.key});
 
     @override
     Widget build(BuildContext context) {

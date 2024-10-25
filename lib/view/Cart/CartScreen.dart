@@ -39,7 +39,7 @@ class _CartScreenState extends State<CartScreen> {
                 separatorBuilder: (_, __) =>
                 const SizedBox(height: Sizes.spaceBtwSections),
                 itemCount: 4, // Example item count
-                itemBuilder: (_, index) => CartItemWidget(),
+                itemBuilder: (_, index) => const CartItemWidget(),
               ),
             ),
           ),

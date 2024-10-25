@@ -5,6 +5,8 @@ import 'package:iconsax/iconsax.dart';
 import '../../../utils/constants/Colors.dart'; // Iconsax package
 
 class RatingBarWidget extends StatelessWidget {
+  const RatingBarWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return RatingBarIndicator(

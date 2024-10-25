@@ -36,7 +36,7 @@ class _ViewAllProductsState extends State<ViewAllProducts> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-            padding: EdgeInsets.all(Sizes.defaultSpace),
+            padding: const EdgeInsets.all(Sizes.defaultSpace),
           child: Column(
             children: [
              /// DropDown

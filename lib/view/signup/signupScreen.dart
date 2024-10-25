@@ -64,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             expands: false,
                             decoration: InputDecoration(
                               labelText: TextSelector.lastName,
-                              prefixIcon: Icon(Iconsax.user),
+                              prefixIcon: const Icon(Iconsax.user),
                               labelStyle: TextStyle(
                                 color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                               ),
@@ -85,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       expands: false,
                       decoration: InputDecoration(
                         labelText: TextSelector.userName,
-                        prefixIcon: Icon(Iconsax.user_edit),
+                        prefixIcon: const Icon(Iconsax.user_edit),
                         labelStyle: TextStyle(
                           color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                         ),
@@ -103,7 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       expands: false,
                       decoration: InputDecoration(
                         labelText: TextSelector.email,
-                        prefixIcon: Icon(Iconsax.direct),
+                        prefixIcon: const Icon(Iconsax.direct),
                         labelStyle: TextStyle(
                           color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                         ),
@@ -121,7 +121,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       expands: false,
                       decoration: InputDecoration(
                         labelText: TextSelector.phoneNo,
-                        prefixIcon: Icon(Iconsax.call),
+                        prefixIcon: const Icon(Iconsax.call),
                         labelStyle: TextStyle(
                           color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                         ),
@@ -140,8 +140,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       expands: false,
                       decoration: InputDecoration(
                         labelText: TextSelector.password,
-                        prefixIcon: Icon(Iconsax.password_check),
-                        suffixIcon: Icon(Iconsax.eye_slash),
+                        prefixIcon: const Icon(Iconsax.password_check),
+                        suffixIcon: const Icon(Iconsax.eye_slash),
                         labelStyle: TextStyle(
                           color: themeController.isDarkTheme.value ? Colors.white : Colors.black,
                         ),
@@ -169,14 +169,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: '${TextSelector.agreedTo}',
+                                    text: TextSelector.agreedTo,
                                     style: Theme.of(context).textTheme.bodySmall,
                                   ),
                                   const  WidgetSpan(
                                     child: SizedBox(width: 5), // Add some space before Privacy Policy
                                   ),
                                   TextSpan(
-                                    text: '${TextSelector.privacyPolicy}',
+                                    text: TextSelector.privacyPolicy,
                                     style: Theme.of(context).textTheme.bodyMedium!.apply(
                                       color: themeController.isDarkTheme.value ? Colors.white : AppColor.primary,
                                     ),
@@ -185,7 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     child: SizedBox(width: 5), // Add some space after Privacy Policy
                                   ),
                                   TextSpan(
-                                    text: '${TextSelector.and}',
+                                    text: TextSelector.and,
                                     style: Theme.of(context).textTheme.bodySmall,
                                   ),
                                   const WidgetSpan(

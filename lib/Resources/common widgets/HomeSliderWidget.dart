@@ -21,7 +21,7 @@ class HomeSliderWidget extends StatelessWidget {
       children: [
         CarouselSlider(
             items: [
-              Container(
+              SizedBox(
                 width: 320,
                 height: 200,
                 child: ClipRRect(
@@ -32,7 +32,7 @@ class HomeSliderWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 320,
                 height: 200,
                 child: ClipRRect(
@@ -43,7 +43,7 @@ class HomeSliderWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
+              SizedBox(
                 width: 320,
                 height: 200,
                 child: ClipRRect(

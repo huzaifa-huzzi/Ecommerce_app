@@ -1,4 +1,3 @@
-import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/Sizes.dart';
 import 'package:ecommerece_app/view/login/LoginScreen.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
@@ -13,13 +12,13 @@ class wishListAppBarWidget extends StatelessWidget implements PreferredSizeWidge
   final Color? color;
 
   const wishListAppBarWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     this.cartItemCount = 0,
     this.color,
 
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

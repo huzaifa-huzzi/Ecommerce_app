@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TabBarStoreWidget extends StatefulWidget implements PreferredSizeWidget {
+  const TabBarStoreWidget({super.key});
+
   @override
   _TabBarStoreWidgetState createState() => _TabBarStoreWidgetState();
 

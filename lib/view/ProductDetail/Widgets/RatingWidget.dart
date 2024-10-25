@@ -16,7 +16,7 @@ class RatingWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(Iconsax.star5,color: Colors.amber,size: 24,),
+            const Icon(Iconsax.star5,color: Colors.amber,size: 24,),
             const SizedBox(width: Sizes.spaceBtwItems /2,),
             Text.rich(
                 TextSpan(

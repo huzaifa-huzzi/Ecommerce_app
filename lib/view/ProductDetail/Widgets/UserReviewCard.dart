@@ -35,7 +35,7 @@ class UserReviewCard extends StatelessWidget {
          /// Reviews
          Row(
            children: [
-              RatingBarWidget(),
+              const RatingBarWidget(),
              const SizedBox(width: Sizes.spaceBtwItems,),
              Text('01 Nov,2023',style: Theme.of(context).textTheme.bodyMedium,),
 

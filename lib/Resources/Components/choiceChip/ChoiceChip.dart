@@ -7,12 +7,12 @@ class CustomChoiceChip extends StatelessWidget {
   final Color color;
 
   const CustomChoiceChip({
-    Key? key,
+    super.key,
     required this.text,
     required this.selected,
     required this.onSelected,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

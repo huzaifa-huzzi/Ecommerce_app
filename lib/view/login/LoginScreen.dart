@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const  SizedBox(height: Sizes.spaceBtwItems,),
                             // SignIn Button
-                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.off(DashboardScreen()) , child: const Text('Sign in')),),
+                            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.off(const DashboardScreen()) , child: const Text('Sign in')),),
                            const  SizedBox(height: Sizes.spaceBtwItems,),
                             // create Account
                             SizedBox(width: double.infinity,child: OutlinedButton(onPressed: ()=>Get.toNamed(RouteName.signupScreen) , child: const Text('Create Account')),),

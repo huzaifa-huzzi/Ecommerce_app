@@ -34,7 +34,7 @@ class _ProductReviewState extends State<ProductReview> {
                /// overall product Ratings
               const RatingProgressIndicator(),
               const SizedBox(height: Sizes.spaceBtwItems,),
-              RatingBarWidget(),
+              const RatingBarWidget(),
               Text('12,611',style: Theme.of(context).textTheme.bodySmall,),
               const SizedBox(height: Sizes.spaceBtwItems,),
 

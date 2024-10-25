@@ -20,7 +20,7 @@ class _EmailVerificationState extends State<EmailVerification> {
   final ThemeController themeController = Get.put(ThemeController());
 
   @override
-  Widget build(BuildContext context) {;
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar:  AppBar(
         automaticallyImplyLeading: false,

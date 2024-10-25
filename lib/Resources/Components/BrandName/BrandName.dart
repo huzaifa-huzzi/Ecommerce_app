@@ -15,14 +15,14 @@ class BrandNameWithIcon extends StatelessWidget {
   final Color? color;
 
   const BrandNameWithIcon({
-    Key? key,
+    super.key,
     required this.brandName,
     this.icon = Iconsax.verify5,
     this.iconColor = AppColor.primary,
     this.iconSize = Sizes.iconXs,
     this.brandTextSize = TextSize.small,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

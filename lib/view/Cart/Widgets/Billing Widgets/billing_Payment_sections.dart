@@ -19,7 +19,7 @@ class BillingPAymentSections extends StatelessWidget {
             Text(' \$256.0',style: Theme.of(context).textTheme.bodyMedium,),
           ],
         ),
-        SizedBox(height: Sizes.spaceBtwItems /2,),
+        const SizedBox(height: Sizes.spaceBtwItems /2,),
          ///  shipping fees
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,7 +28,7 @@ class BillingPAymentSections extends StatelessWidget {
             Text(' \$6.0',style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
-        SizedBox(height: Sizes.spaceBtwItems /2,),
+        const SizedBox(height: Sizes.spaceBtwItems /2,),
         /// Tax Fees
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,7 +37,7 @@ class BillingPAymentSections extends StatelessWidget {
             Text(' \$6.0',style: Theme.of(context).textTheme.labelLarge,),
           ],
         ),
-        SizedBox(height: Sizes.spaceBtwItems /2,),
+        const SizedBox(height: Sizes.spaceBtwItems /2,),
          /// Order Total
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

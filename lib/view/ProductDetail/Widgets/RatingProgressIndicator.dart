@@ -30,7 +30,7 @@ import '../../../utils/constants/Colors.dart';
     minHeight: 11,
     backgroundColor: AppColor.grey,
     borderRadius: BorderRadius.circular(7),
-    valueColor: AlwaysStoppedAnimation(AppColor.primary),
+    valueColor: const AlwaysStoppedAnimation(AppColor.primary),
 
     ),
     ),
@@ -50,7 +50,7 @@ import '../../../utils/constants/Colors.dart';
                 minHeight: 11,
                 backgroundColor: AppColor.grey,
                 borderRadius: BorderRadius.circular(7),
-                valueColor: AlwaysStoppedAnimation(AppColor.primary),
+                valueColor: const AlwaysStoppedAnimation(AppColor.primary),
 
               ),
             ),
@@ -70,7 +70,7 @@ import '../../../utils/constants/Colors.dart';
                 minHeight: 11,
                 backgroundColor: AppColor.grey,
                 borderRadius: BorderRadius.circular(7),
-                valueColor: AlwaysStoppedAnimation(AppColor.primary),
+                valueColor: const AlwaysStoppedAnimation(AppColor.primary),
 
               ),
             ),
@@ -90,7 +90,7 @@ import '../../../utils/constants/Colors.dart';
                 minHeight: 11,
                 backgroundColor: AppColor.grey,
                 borderRadius: BorderRadius.circular(7),
-                valueColor: AlwaysStoppedAnimation(AppColor.primary),
+                valueColor: const AlwaysStoppedAnimation(AppColor.primary),
 
               ),
             ),
@@ -110,7 +110,7 @@ import '../../../utils/constants/Colors.dart';
                 minHeight: 11,
                 backgroundColor: AppColor.grey,
                 borderRadius: BorderRadius.circular(7),
-                valueColor: AlwaysStoppedAnimation(AppColor.primary),
+                valueColor: const AlwaysStoppedAnimation(AppColor.primary),
 
               ),
             ),
