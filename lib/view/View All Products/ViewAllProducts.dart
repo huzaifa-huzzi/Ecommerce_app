@@ -1,3 +1,5 @@
+import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
+import 'package:ecommerece_app/Resources/common%20widgets/GridLayoutWidget/GridLayout.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,6 +46,7 @@ class _ViewAllProductsState extends State<ViewAllProducts> {
               ),
               const  SizedBox(height: Sizes.spaceBtwSections,),
               /// Products
+               GridLayout(itemCount: 4, itemBuilder: (_,index) => const ProductCardVertical())
             ],
           ),
         ),
