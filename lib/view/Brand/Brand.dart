@@ -7,8 +7,6 @@ import 'package:get/get.dart';
 
 import '../../utils/constants/sizes.dart';
 
-
-
 class AllBrandScreen extends StatefulWidget {
   const AllBrandScreen({super.key});
 
@@ -17,7 +15,6 @@ class AllBrandScreen extends StatefulWidget {
 }
 
 class _AllBrandScreenState extends State<AllBrandScreen> {
-
   final ThemeController themeController = Get.put(ThemeController());
 
   @override
@@ -34,39 +31,37 @@ class _AllBrandScreenState extends State<AllBrandScreen> {
               : Colors.black, // Back button color for light theme
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-            padding:  const EdgeInsets.all(Sizes.defaultSpace),
-          child: Column(
-            children: [
-              /// Heading
-              SectionHeadingWidget(title: 'Brands', onPressed: (){}),
-              const SizedBox(height: Sizes.spaceBtwItems,),
+      body: Padding(
+        padding: const EdgeInsets.all(Sizes.defaultSpace),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Section heading
+            SectionHeadingWidget(
+              title: 'Brands',
+              onPressed: () {},
+            ),
+            const SizedBox(height: Sizes.spaceBtwItems),
 
-              /// -- Brands
-               GridLayout(itemCount: 10, itemBuilder: (context,index) => SizedBox(
-                 height: 300, // Adjust height based on design
-                 child: GridView.builder(
-                   padding: EdgeInsets.zero,
-                   itemCount: 4,
-                   shrinkWrap: true,
-                   physics: const NeverScrollableScrollPhysics(),
-                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                     crossAxisCount: 2,
-                     mainAxisSpacing: Sizes.gridViewSpacing,
-                     crossAxisSpacing: Sizes.gridViewSpacing,
-                     mainAxisExtent: 100,
-                   ),
-                   itemBuilder: (context, index) {
-                     return const GridingWithWidget();
-                   },
-                 ),
-               ), )
-            ],
-          ),
+            // Main grid layout
+            Expanded(
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: 10, // Adjust according to the number of brands
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: Sizes.gridViewSpacing,
+                  crossAxisSpacing: Sizes.gridViewSpacing,
+                  mainAxisExtent: 150, // Adjust height for each grid item
+                ),
+                itemBuilder: (context, index) {
+                  return const GridingWithWidget();
+                },
+              ),
+            ),
+          ],
         ),
       ),
-
     );
   }
 }
