@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 8.0),
               child: SectionHeadingWidget(
                 title: 'Popular Categories',
-                onPressed: (){},
+                onPressed: () => Get.toNamed('/ViewAllProducts'),
                 showActionButton: true,
                 textColor: themeController.isDarkTheme.value ? Colors.white : AppColor.dark ,
               ),

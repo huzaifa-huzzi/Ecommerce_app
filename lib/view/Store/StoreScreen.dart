@@ -69,7 +69,7 @@ class _StoreScreenState extends State<StoreScreen> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () => Get.to(() => AllBrandScreen()),
+                            onPressed: () => Get.toNamed('/AllBrandScreen'),
                             child: Text('View All',
                                 style: TextStyle(color: appBarTextColor)),
                           ),
