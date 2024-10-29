@@ -1,24 +1,16 @@
 import 'package:ecommerece_app/Resources/Product%20Card/Product_card_vertical.dart';
-import 'package:ecommerece_app/Resources/common%20widgets/GridLayoutWidget/GridLayout.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../utils/constants/sizes.dart';
+
+import '../../utils/constants/Sizes.dart';
 
 
 
+class ViewAllProducts extends StatelessWidget {
+  ViewAllProducts({Key? key}) : super(key: key);
 
-
-class ViewAllProducts extends StatefulWidget {
-  const ViewAllProducts({super.key});
-
-  @override
-  State<ViewAllProducts> createState() => _ViewAllProductsState();
-}
-
-class _ViewAllProductsState extends State<ViewAllProducts> {
-
-  final ThemeController themeController = Get.put(ThemeController());
+  final ThemeController themeController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +22,34 @@ class _ViewAllProductsState extends State<ViewAllProducts> {
         ),
         iconTheme: IconThemeData(
           color: themeController.isDarkTheme.value
-              ? Colors.white // Back button color for dark theme
-              : Colors.black, // Back button color for light theme
+              ? Colors.white
+              : Colors.black,
         ),
       ),
       body: SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.all(Sizes.defaultSpace),
+          padding: const EdgeInsets.all(Sizes.spaceBtwItems),
           child: Column(
             children: [
-             /// DropDown
-              DropdownButtonFormField(
-                  items: ['Name','Higher Price','Lower Prices',' Sale','Newest'].map((option) => DropdownMenuItem(value: option,child: Text(option))).toList(),
-                  onChanged: (value){}
+              DropdownButtonFormField<String>(
+                items: ['Name', 'Higher Price', 'Lower Prices', 'Sale', 'Newest']
+                    .map((option) => DropdownMenuItem(
+                  value: option,
+                  child: Text(option),
+                ))
+                    .toList(),
+                onChanged: (value) {},
               ),
-              const  SizedBox(height: Sizes.spaceBtwSections,),
-              /// Products
-               GridLayout(itemCount: 4, itemBuilder: (_,index) => const ProductCardVertical())
+              const SizedBox(height: Sizes.spaceBtwSections),
+              GridView.builder(
+                  itemCount: 4,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
+                  physics:const  NeverScrollableScrollPhysics(),
+                  gridDelegate:const
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: Sizes.gridViewSpacing,crossAxisSpacing: Sizes.gridViewSpacing,mainAxisExtent: 288), itemBuilder: (_,index){
+                return const  ProductCardVertical();
+              }),
             ],
           ),
         ),

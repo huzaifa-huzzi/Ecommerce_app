@@ -23,7 +23,7 @@ class AppRoutes{
     GetPage(name:RouteName.signupScreen , page: () =>const   SignUpScreen()),
     GetPage(name:RouteName.emailVerification , page: () =>const   EmailVerification()),
     GetPage(name:RouteName.emailVerification , page: () =>const   ForgotPassword()),
-    GetPage(name:RouteName.AllProductSrceen, page: () =>const   ViewAllProducts()),
+    GetPage(name:RouteName.AllProductSrceen, page: () =>ViewAllProducts()),
     GetPage(name:RouteName.BrandingName, page: () =>const   AllBrandScreen()),
 
   ];
