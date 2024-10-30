@@ -1,44 +1,41 @@
 plugins {
     id "com.android.application"
     // START: FlutterFire Configuration
-    id 'com.google.gms.google-services'
+    id 'com.google.gms.google-services' // Firebase services
     // END: FlutterFire Configuration
-    id "kotlin-android"
+    id "kotlin-android" // Kotlin support
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id "dev.flutter.flutter-gradle-plugin"
+    id "dev.flutter.flutter-gradle-plugin" // Flutter Gradle Plugin
 }
 
 android {
-    applicationId "com.huzaifaKhan.ecommerceapp"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = flutter.compileSdkVersion // Using Flutter's compile SDK version
+    ndkVersion = flutter.ndkVersion // Specify NDK version if needed
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Set source compatibility
+        targetCompatibility = JavaVersion.VERSION_1_8 // Set target compatibility
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = JavaVersion.VERSION_1_8 // Set Kotlin JVM target
     }
 
     defaultConfig {
-        // Specify a unique Application ID
-        applicationId "com.huzaifaKhan.ecommerceapp"
-        minSdk = 21
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        applicationId "com.huzaifaKhan.ecommerceapp" // Unique Application ID
+        minSdk = 23 // Minimum SDK version
+        targetSdk = flutter.targetSdkVersion // Target SDK version
+        versionCode = flutter.versionCode // Version code
+        versionName = flutter.versionName // Version name
     }
 
     buildTypes {
         release {
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            signingConfig = signingConfigs.debug // Use debug signing for release builds temporarily
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source = "../.." // Path to the Flutter source code
 }

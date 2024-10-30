@@ -54,6 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:776395003279:android:f844907ce60fe8bd4c67fa',
     messagingSenderId: '776395003279',
     projectId: 'ecommerce-app-be78c',
+    databaseURL: 'https://ecommerce-app-be78c-default-rtdb.firebaseio.com',
     storageBucket: 'ecommerce-app-be78c.appspot.com',
   );
 
@@ -62,7 +63,10 @@ class DefaultFirebaseOptions {
     appId: '1:776395003279:ios:3ab2d8060e976e534c67fa',
     messagingSenderId: '776395003279',
     projectId: 'ecommerce-app-be78c',
+    databaseURL: 'https://ecommerce-app-be78c-default-rtdb.firebaseio.com',
     storageBucket: 'ecommerce-app-be78c.appspot.com',
+    iosClientId: '776395003279-01oiibohd23f05h87mdramt1ieftn955.apps.googleusercontent.com',
     iosBundleId: 'com.example.ecommereceApp',
   );
+
 }

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "776395003279",
+    "firebase_url": "https://ecommerce-app-be78c-default-rtdb.firebaseio.com",
     "project_id": "ecommerce-app-be78c",
     "storage_bucket": "ecommerce-app-be78c.appspot.com"
   },
@@ -12,7 +13,12 @@
           "package_name": "com.huzaifaKhan.ecommerceapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "776395003279-qgj6nmb6qrav76ost5166urudkssnu06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBHKJwR14ZCcLoI5IsWFKgPkPDWMhKpuFs"
@@ -20,7 +26,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "776395003279-qgj6nmb6qrav76ost5166urudkssnu06.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "776395003279-01oiibohd23f05h87mdramt1ieftn955.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ecommereceApp"
+              }
+            }
+          ]
         }
       }
     }
