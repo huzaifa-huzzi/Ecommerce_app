@@ -1,6 +1,7 @@
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class SettingMenuTileComponent extends StatelessWidget {
    SettingMenuTileComponent({super.key, required this.icon, required this.title, required this.subtitle, this.trailing,required this.ontap});
 

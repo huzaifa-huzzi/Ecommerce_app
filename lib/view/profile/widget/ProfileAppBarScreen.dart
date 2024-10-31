@@ -19,7 +19,7 @@ class ProfileAppBarScreenWidget extends StatelessWidget implements PreferredSize
 
   @override
   Widget build(BuildContext context) {
-    final ThemeController themeController = Get.put(ThemeController());
+    Get.put(ThemeController());
     return AppBar(
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

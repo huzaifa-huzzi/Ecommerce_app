@@ -52,6 +52,7 @@ class AppColor {
   static const Color darkerGrey = Color(0xFF4F4F4F);
   static const Color darkGrey = Color(0xFF939393);
   static const Color grey = Color(0xFFE0E0E0);
+  // ignore: use_full_hex_values_for_flutter_colors
   static const Color lightGrey = Color(0xfff9f9f9f);
 
 

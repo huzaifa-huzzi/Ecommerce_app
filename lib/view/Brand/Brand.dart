@@ -1,5 +1,4 @@
 import 'package:ecommerece_app/Resources/Components/Gridingwithwidget/GridingWithWidget.dart';
-import 'package:ecommerece_app/Resources/common%20widgets/GridLayoutWidget/GridLayout.dart';
 import 'package:ecommerece_app/Resources/common%20widgets/sectionHeading/sectionHeadingWidget.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';

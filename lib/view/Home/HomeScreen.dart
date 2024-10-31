@@ -7,7 +7,6 @@ import 'package:ecommerece_app/Resources/common%20widgets/VerticalImageWidget/ve
 import 'package:ecommerece_app/utils/constants/Colors.dart';
 import 'package:ecommerece_app/utils/constants/sizes.dart';
 import 'package:ecommerece_app/view/SubCategory/SubCategoryScreen.dart';
-import 'package:ecommerece_app/view/View%20All%20Products/ViewAllProducts.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

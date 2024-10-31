@@ -8,7 +8,7 @@ import '../../utils/constants/Sizes.dart';
 
 
 class ViewAllProducts extends StatelessWidget {
-  ViewAllProducts({Key? key}) : super(key: key);
+  ViewAllProducts({super.key});
 
   final ThemeController themeController = Get.find();
 

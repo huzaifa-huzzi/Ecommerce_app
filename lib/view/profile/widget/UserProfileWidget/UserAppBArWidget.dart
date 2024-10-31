@@ -1,6 +1,4 @@
-import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class UserappBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -14,7 +12,7 @@ class UserappBarWidget extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeController themeController = Get.put(ThemeController());
+
 
     return AppBar(
       leading: IconButton(
