@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    compileSdk = flutter.compileSdkVersion // Using Flutter's compile SDK version
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion // Specify NDK version if needed
 
     compileOptions {
@@ -24,7 +24,7 @@ android {
     defaultConfig {
         applicationId "com.huzaifaKhan.ecommerceapp" // Unique Application ID
         minSdk = 23 // Minimum SDK version
-        targetSdk = flutter.targetSdkVersion // Target SDK version
+        targetSdk = 33
         versionCode = flutter.versionCode // Version code
         versionName = flutter.versionName // Version name
     }
