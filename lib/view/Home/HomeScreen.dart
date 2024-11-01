@@ -10,7 +10,6 @@ import 'package:ecommerece_app/view/SubCategory/SubCategoryScreen.dart';
 import 'package:ecommerece_app/view_model/Controller/ThemeController/ThemeController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../Resources/common widgets/searchBAr/HomeSearchBAr.dart';
 import '../../Resources/common widgets/sectionHeading/sectionHeadingWidget.dart';
 
