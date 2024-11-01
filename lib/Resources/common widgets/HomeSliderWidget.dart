@@ -8,7 +8,6 @@ import '../../utils/constants/sizes.dart';
 
 
 
-
 class HomeSliderWidget extends StatelessWidget {
   const HomeSliderWidget({
     super.key,
